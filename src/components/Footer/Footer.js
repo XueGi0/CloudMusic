@@ -8,7 +8,7 @@ export default class Footer extends React.Component {
                 <p className="icon1"></p>
                 <span>发现音乐</span>
             </NavLink>
-            <NavLink to={'/music'}>
+            <NavLink to={'/user'}>
                 <p className="icon2"></p>
                 <span>我的音乐</span>
             </NavLink>

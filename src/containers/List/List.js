@@ -2,7 +2,8 @@ import React from 'react';
 import './index.less';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
-import actions from '../../store/actions/list'
+import actions from '../../store/actions/index'
+import MusicHeader from "../../components/MusicHeader/MusicHeader";
 
 class List extends React.Component {
     componentWillMount() {
@@ -48,45 +49,48 @@ class List extends React.Component {
 
     render() {
         console.log(this.props.lists);
-        return <div className="listBox">
-            <ul className="listTop">
-                <li className="localMusic"><i></i>本地音乐</li>
-                <li className="recentPlay"><i></i>最近播放</li>
-                <li className="myVideo"><i></i>我的电台</li>
-                <li className="myLove"><i></i>我的收藏</li>
-            </ul>
-            <div className="listBottom">
+        return <div className="listBigBox">
+            <MusicHeader/>
+            <div className="listBox">
+                <ul className="listTop">
+                    <li className="localMusic"><i></i>本地音乐</li>
+                    <li className="recentPlay"><i></i>最近播放</li>
+                    <li className="myVideo"><i></i>我的电台</li>
+                    <li className="myLove"><i></i>我的收藏</li>
+                </ul>
+                <div className="listBottom">
                 <span>
                     <i ref={x => this.tip = x} onClick={this.handleClick} className="rotate">
                     </i>我创建的歌单
                 </span>
-                <ul className="musicList" ref={x => this.box = x}>
+                    <ul className="musicList" ref={x => this.box = x}>
 
-                    {this.props.lists && this.props.lists.playlist.length > 1 ? this.props.lists.playlist.map((item, index) => (
-                            <li className="listItem"
-                                onTouchStart={(e) => this.touchBegin(e)}
-                                onTouchMove={(e) => this.touching(e)}
-                                key={index}
-                                onClick={() => {
-                                }}
-                            >
+                        {this.props.lists && this.props.lists.playlist.length > 1 ? this.props.lists.playlist.map((item, index) => (
+                                <li className="listItem"
+                                    onTouchStart={(e) => this.touchBegin(e)}
+                                    onTouchMove={(e) => this.touching(e)}
+                                    key={index}
+                                    onClick={() => {
+                                    }}
+                                >
+                                    <Link to={{pathname:'/playList',initid:item.id}}>
+                                        <img src={item.coverImgUrl} alt=""/>
+                                        <p className="textLike">{item.name}<span>{item.playCount}首</span></p>
+                                    </Link>
+                                    <span className="listDelete" ref={x => this.delBox = x}>删除</span>
+                                </li>
+                            )) :
+                            <li className="listItem">
                                 <Link to={'/playList'}>
-                                <img src={item.coverImgUrl} alt=""/>
-                                <p className="textLike">{item.name}<span>{item.playCount}首</span></p>
+                                    <p className="img"></p>
+                                    <p className="textLike">我喜欢的音乐<span>首</span></p>
                                 </Link>
-                                <span className="listDelete" ref={x => this.delBox = x}>删除</span>
+                                <a href="javascript:;" className="aaa"></a>
                             </li>
-                    )) :
-                        <li className="listItem">
-                            <Link to={'/playList'}>
-                            <p className="img"></p>
-                            <p className="textLike">我喜欢的音乐<span>首</span></p>
-                            </Link>
-                            <a href="javascript:;" className="aaa"></a>
-                        </li>
-                    }
+                        }
 
-                </ul>
+                    </ul>
+                </div>
             </div>
         </div>
     }
