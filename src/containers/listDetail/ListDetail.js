@@ -1,5 +1,6 @@
 import React from 'react';
 import './listDetail.less';
+import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import actions from '../../store/actions'
 import MusicHeader from "../../components/MusicHeader/MusicHeader";
@@ -10,7 +11,12 @@ class ListDetail extends React.Component{
         console.log(id);
     }
     render(){
-        return <div>
+        return <div className="bigBox">
+            <div className="listDetail-header">
+                <Link to={'/user'} className="pic1"></Link>
+                <span>歌单</span>
+                <i className="pic2"></i>
+            </div>
             <div className="detailTop">
                 <div className="top-top">
                     <img src={this.props.listDetail?this.props.listDetail.result?this.props.listDetail.result.creator.avatarUrl:null:null} alt=""/>
