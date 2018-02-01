@@ -1,8 +1,7 @@
 import React from 'react';
 import './listDetail.less';
-import a from '../../images/nav_top.png'
 import {connect} from 'react-redux';
-import actions from '../../store/actions/index'
+import actions from '../../store/actions'
 import MusicHeader from "../../components/MusicHeader/MusicHeader";
 class ListDetail extends React.Component{
     componentWillMount() {
@@ -10,11 +9,7 @@ class ListDetail extends React.Component{
         this.props.getListDetailAPI(id);
         console.log(id);
     }
-    componentDidMount(){
-        console.log(this.props);
-    }
     render(){
-        // console.log(this.props.listDetail);
         return <div>
             <div className="detailTop">
                 <div className="top-top">
@@ -73,7 +68,7 @@ class ListDetail extends React.Component{
                     )):null:null}
                 </ul>
             </div>
-        </div>
-    }
+         </div>
+  }
 }
 export default connect(state => ({...state.list}), actions)(ListDetail);

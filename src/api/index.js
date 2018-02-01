@@ -1,6 +1,9 @@
 import axios from 'axios';
+
 axios.defaults.baseURL = 'http://localhost:4000';
-axios.defaults.withCredentials=true;//允许携带凭证
+
+axios.defaults.withCredentials = true;
+
 axios.interceptors.response.use(function (res) {
   return res.data;
 });

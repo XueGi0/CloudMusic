@@ -1,10 +1,12 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
 import './Footer.less';
+
+
 export default class Footer extends React.Component {
-    render(){
+    render() {
         return <nav className="nav1">
-            <NavLink to={'/home'}>
+            <NavLink to={'/'}>
                 <p className="icon1"></p>
                 <span>发现音乐</span>
             </NavLink>
@@ -18,4 +20,5 @@ export default class Footer extends React.Component {
             </NavLink>
         </nav>
     }
+
 }

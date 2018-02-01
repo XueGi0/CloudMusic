@@ -2,11 +2,12 @@ import React from 'react';
 import './index.less';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
-import actions from '../../store/actions/index'
+
+import actions from '../../store/actions'
 import MusicHeader from "../../components/MusicHeader/MusicHeader";
 
 class List extends React.Component {
-    componentWillMount() {
+    componentDidMount() {
         this.props.getPlayListAPI('32953014');
     }
 
@@ -48,7 +49,6 @@ class List extends React.Component {
     };
 
     render() {
-        console.log(this.props.lists);
         return <div className="listBigBox">
             <MusicHeader/>
             <div className="listBox">
@@ -73,7 +73,7 @@ class List extends React.Component {
                                     onClick={() => {
                                     }}
                                 >
-                                    <Link to={{pathname:'/playList',initid:item.id}}>
+                                    <Link to={{pathname: '/playList', initid: item.id}}>
                                         <img src={item.coverImgUrl} alt=""/>
                                         <p className="textLike">{item.name}<span>{item.playCount}首</span></p>
                                     </Link>
@@ -95,5 +95,4 @@ class List extends React.Component {
         </div>
     }
 }
-
-export default connect(state => ({...state.list}), actions)(List)
+export default connect(state => ({...state.list}), {...actions})(List);
