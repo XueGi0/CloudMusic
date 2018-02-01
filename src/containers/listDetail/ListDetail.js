@@ -45,7 +45,7 @@ class ListDetail extends React.Component{
                         <i></i>
                         <p>
                             <span>播放全部</span>
-                            (共首)
+                            (共{this.props.listDetail?this.props.listDetail.result?this.props.listDetail.result.tracks.length:0:0}首)
                         </p>
                     </li>
                     <li className="bot-top-right">
