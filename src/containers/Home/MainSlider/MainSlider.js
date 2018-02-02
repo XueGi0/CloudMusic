@@ -15,7 +15,7 @@ export default class MainSlider extends Component {
     let sliders = this.props.sliders;
     return (
       <div className="cwj-slider-box">
-        <Carousel>
+        <Carousel autoplay>
           {
             items.map((item, index) => (
               <div key={index}>
