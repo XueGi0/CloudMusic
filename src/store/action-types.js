@@ -13,3 +13,9 @@ export const GET_PLAYLIST = ' GET_PLAYLIST';
 //获取歌单详情
 export const GET_PLAYLISTDETAIL = 'GET_PLAYLISTDETAIL';
 
+//获取热门电台
+export const GET_HOTDJ='GET_HOTDJ';
+
+//获取热门歌单
+export const GET_HOTLIST='GET_HOTLIST';
+

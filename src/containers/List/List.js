@@ -55,8 +55,8 @@ class List extends React.Component {
                 <ul className="listTop">
                     <li className="localMusic"><i></i>本地音乐</li>
                     <li className="recentPlay"><Link to={{pathname: '/record', userid:'32953014'}}><i></i>最近播放</Link></li>
-                    <li className="myVideo"><i></i>我的电台</li>
-                    <li className="myLove"><i></i>我的收藏</li>
+                    <li className="myVideo"><Link to={'/dj'}><i></i>我的电台</Link></li>
+                    <li className="myLove"><Link to={'/collection'}><i></i>我的收藏</Link></li>
                 </ul>
                 <div className="listBottom">
                 <span>
