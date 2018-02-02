@@ -57,7 +57,7 @@ export default class MessageBox extends React.Component {
     };
     render() {
         return (
-            <section className="container">
+            <section className="play_container">
                 <audio src={music} preload="" className="musicAudio" ref={x=>this.audio=x}></audio>
                 <div className="backgroundImg"></div>
                 <div className="header">

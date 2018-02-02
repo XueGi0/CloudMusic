@@ -4,16 +4,14 @@
 }
 html,body{
     font-size: 100px;
-    color: #fff;
-
 }
-html, body, .container {
+html, body, .play_container {
     height: 100%;
     overflow: hidden;
 }
 
 
-.container {
+.play_container {
     display: block;
     position: relative;
     margin: 0 auto;
@@ -21,7 +19,7 @@ html, body, .container {
 
 
 }
-.container .backgroundImg{
+.play_container .backgroundImg{
     background: url("../../images/img/myDream.jpg") no-repeat center ;
     position: absolute;
     top: 0;
@@ -349,9 +347,6 @@ html, body, .container {
     100% {
         transform: rotateZ(360deg)
     }
-}
-.nav1{
-    display: none;
 }
 
 .playMore{
