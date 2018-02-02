@@ -19,3 +19,6 @@ export const GET_HOTDJ='GET_HOTDJ';
 //获取热门歌单
 export const GET_HOTLIST='GET_HOTLIST';
 
+//获取最近播放记录
+export const GET_RENCENTHISTORY='GET_RENCENTHISTORY';
+

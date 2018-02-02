@@ -1,5 +1,5 @@
 import * as Types from '../action-types';
-import {getPlayList, getListDetail, getHotdj, getHotList} from '../../api/list';
+import {getPlayList, getListDetail, getHotdj, getHotList, getRencentHistory} from '../../api/list';
 import {getSongList, getExclusive, getNewestMv} from '../../api/Home';
 let actions = {
     getSongListAPI(){
@@ -30,6 +30,11 @@ let actions = {
     getHotdjAPI(){
         return function (dispatch,getState) {
             dispatch({type:Types.GET_HOTDJ,payload:getHotdj()})
+        }
+    },
+    getRecentHistoryAPI(id){
+        return function (dispatch,getState) {
+            dispatch({type:Types.GET_RENCENTHISTORY,payload:getRencentHistory(id)})
         }
     },
     getHotListAPI(){

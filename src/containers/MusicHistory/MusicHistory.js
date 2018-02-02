@@ -4,7 +4,10 @@ import {Link} from 'react-router-dom';
 import a from '../../images/srch_icn_clock.png'
 import {connect} from 'react-redux';
 import actions from '../../store/actions'
-export default class MusicHistory extends React.Component{
+class MusicHistory extends React.Component{
+    componentDidMount() {
+        this.props.getRecentHistoryAPI('539241835');
+    }
     render(){
         return <div className="bigBox">
             <div className="music-header">
@@ -18,29 +21,27 @@ export default class MusicHistory extends React.Component{
                 </div>
                 <span>最近播放的歌曲</span>
                 <p>
-                    26
+                    100
                     <span className="musicdetail"></span>
                 </p>
             </div>
             <div className="list-bottom">
-                <span className="bottom-top">
-                    最近播放的歌曲/专辑/电台
-                </span>
+                {/*<span className="bottom-top">*/}
+                    {/*最近播放的歌曲*/}
+                {/*</span>*/}
                 <ul className="musicList">
-                            <li className="listItem">
-                                <Link to={{pathname: '/playList'}}>
-                                    <img src="" alt=""/>
-                                    <p className="textLike">
-                                        <span>
-                                            歌单名
-                                        </span>
-                                        <i>by名字</i>
-                                        <em>时间</em>
-                                    </p>
-                                </Link>
-                            </li>
+                    {this.props.historyList?this.props.historyList.weekData.map((item,index)=>(
+                        <li key={index} className="listItem">
+                            <p>
+                                {item.song.name}<br/>
+                                <span>{item.song.ar[0].name}-{item.song.al.name}</span>
+                            </p>
+                            <span></span>
+                        </li>
+                    )):null}
                 </ul>
             </div>
         </div>
     }
 }
+export default connect(state => ({...state.list}), actions)(MusicHistory);

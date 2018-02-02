@@ -9,6 +9,10 @@ export function getPlayList(uid) {
 export function getListDetail(id) {
   return axios.get(`/playlist/detail?id=${id}`)
 }
+//获取最近播放记录
+export function getRencentHistory(id) {
+    return axios.get(`/user/record?uid=${id}&type=1`)
+}
 //获取推荐电台
 export function getHotdj() {
     return axios.get('/program/recommend')

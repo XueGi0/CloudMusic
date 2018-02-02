@@ -7,10 +7,25 @@ import actions from '../../store/actions'
 import MusicHeader from "../../components/MusicHeader/MusicHeader";
 
 class List extends React.Component {
+    constructor(){
+        super();
+        this.state={
+            point:''
+        };
+    }
     componentDidMount() {
         this.props.getPlayListAPI('32953014');
     }
-
+    move=(e)=>{
+        if(e.target!==this.state.point){
+            console.log(this.box.children);
+            for (let key in this.box.children) {
+                if (this.box.children.hasOwnProperty(key)) {
+                    this.box.children[key].children[1].style.right='-80px';
+                }
+            }
+        }
+    };
     handleClick = () => {
         let $tip = this.tip;
         let $box = this.box;
@@ -26,9 +41,8 @@ class List extends React.Component {
         }
     };
     touchBegin = (e) => {
-        console.log(e.changedTouches);
-        console.log(e);
         let point = e.changedTouches[0];
+        this.setState({point});
         this.strX = point.clientX;
         this.strY = point.clientY;
         this.changeX = 0;
@@ -36,20 +50,22 @@ class List extends React.Component {
     };
     touching = (e) => {
         let point = e.changedTouches[0];
+
+        console.log(point);
         let changeX = point.clientX - parseFloat(this.strX),
             changeY = point.clientY - parseFloat(this.strY);
         if (Math.abs(changeX) > 10 && Math.abs(changeX) < 80) {
             this.changeX = changeX;
-            this.delBox.style.right = -changeX - 80 + 'px';
+            e.target.childNodes[1].style.right = -changeX - 80 + 'px';
         }
         if (Math.abs(changeX) > 80) {
             this.changeX = changeX;
-            this.delBox.style.right = 0;
+            e.target.childNodes[1].style.right = 0;
         }
     };
 
     render() {
-        return <div className="listBigBox">
+        return <div className="listBigBox" onTouchStart={this.move}>
             <MusicHeader/>
             <div className="listBox">
                 <ul className="listTop">
@@ -66,18 +82,16 @@ class List extends React.Component {
                     <ul className="musicList" ref={x => this.box = x}>
 
                         {this.props.lists && this.props.lists.playlist.length > 1 ? this.props.lists.playlist.map((item, index) => (
-                                <li className="listItem"
-                                    onTouchStart={(e) => this.touchBegin(e)}
-                                    onTouchMove={(e) => this.touching(e)}
+                                <li className="listItem" id={index}
+                                    onTouchStart={this.touchBegin}
+                                    onTouchMove={this.touching}
                                     key={index}
-                                    onClick={() => {
-                                    }}
                                 >
                                     <Link to={{pathname: '/playList', initid: item.id}}>
                                         <img src={item.coverImgUrl} alt=""/>
                                         <p className="textLike">{item.name}<span>{item.playCount}首</span></p>
                                     </Link>
-                                    <span className="listDelete" ref={x => this.delBox = x}>删除</span>
+                                    <span className="listDelete">删除</span>
                                 </li>
                             )) :
                             <li className="listItem">
