@@ -10,6 +10,7 @@ import App from './containers/App';
 import {Provider} from 'react-redux';
 import store from './store';
 import Player from './containers/Player/Player';
+import MusicHistory from "./containers/MusicHistory/MusicHistory";
 
 ReactDOM.render(
   <Provider store={store}>
@@ -22,6 +23,7 @@ ReactDOM.render(
           <Route path="/profile" component={Profile}/>
           <Route path="/playList" component={ListDetail}/>
           <Route path="/player" component={Player}/>
+          <Route path="/record" component={MusicHistory}/>
         </Switch>
       </App>
     </Router>
