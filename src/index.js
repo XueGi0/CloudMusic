@@ -20,6 +20,8 @@ import Regard from './containers/Profile/Regard/Regard';
 import App from './containers/App';
 import {Provider} from 'react-redux';
 import store from './store';
+import Player from './containers/Player/Player';
+import MusicHistory from "./containers/MusicHistory/MusicHistory";
 
 ReactDOM.render(
   <Provider store={store}>
@@ -31,6 +33,7 @@ ReactDOM.render(
           <Route path="/music" component={Music}/>
           <Route path="/profile" component={Profile}/>
           <Route path="/playList" component={ListDetail}/>
+<<<<<<< HEAD
           <Route path="/message" component={Message}/>
           <Route path="/vip" component={VIP}/>
           <Route path="/shop" component={Shop}/>
@@ -41,6 +44,10 @@ ReactDOM.render(
           <Route path="/timer" component={Timer}/>
           <Route path="/clock" component={Clock}/>
           <Route path="/regard" component={Regard}/>
+=======
+          <Route path="/player" component={Player}/>
+          <Route path="/record" component={MusicHistory}/>
+>>>>>>> 4d12a1001ff72ccfbe3d11a24732d1bc8dd585b6
         </Switch>
       </App>
     </Router>
