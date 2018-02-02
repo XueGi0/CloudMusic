@@ -6,7 +6,7 @@ import './Footer.less';
 export default class Footer extends React.Component {
   render() {
     return <nav className="nav1">
-      <NavLink to={'/'}>
+      <NavLink to={'/'} exact={true}>
         <p className="icon1"></p>
         <span>发现音乐</span>
       </NavLink>

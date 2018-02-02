@@ -8,7 +8,7 @@ export default class Exclusive extends React.Component {
     return (
       <div className="list">
         <div className="list_title">
-          <p>推荐歌单</p>
+          <p>独家放送</p>
           <span className="arrow"> </span>
         </div>
         <ul className="exclusiveLists">
