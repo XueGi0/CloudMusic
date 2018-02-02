@@ -1,292 +1,305 @@
-*{
-    margin: 0;
-    padding: 0;
-}
-html,body{
-    font-size: 100px;
-    color: #fff;
-
-}
-html, body, .container {
-    height: 100%;
-    overflow: hidden;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-
-.container {
-    display: block;
-    position: relative;
-    margin: 0 auto;
-    max-width: 375px;
-
+html, body {
+  font-size: 100px;
 
 }
-.container .backgroundImg{
-    background: url("../../images/img/myDream.jpg") no-repeat center ;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -2;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    -webkit-filter: blur(20px);
-    filter: blur(20px);
+
+html, body {
+  height: 100%;
 }
+
+.play_container {
+
+}
+
+.play_container .backgroundImg {
+  background: url("../../images/img/myDream.jpg") no-repeat center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  -webkit-filter: blur(20px);
+  filter: blur(20px);
+}
+
 .header {
-    height: .4rem;
-    border-bottom: 0.01rem solid rgb(111, 110, 105);
-    position: relative;
-    padding-top:0.2rem ;
-}
-.back{
-    padding-left: 0.2rem;
-    display: inline-block;
-    float: left;
-    font-size: .2rem;
-}
-.share{
-    padding-right: 0.15rem;
-    display: inline-block;
-    float: right;
-    font-size: .2rem;
-}
-.title{
-    display: inline-block;
-    font-size: .2rem;
-    margin: 0 auto;
-    width: 2rem;
-    position: absolute;
-    left: 0.9rem;
-}
-.title p:nth-child(1){
-    text-align: center;
-    font-size: 0.18rem;
-}
-.title p:nth-child(2){
-    text-align: center;
-    font-size: 0.09rem;
+  height: .4rem;
+  border-bottom: 0.01rem solid rgb(111, 110, 105);
+  position: relative;
+  padding-top: 0.2rem;
 }
 
-.musicBody{
-
-    overflow: hidden;
+.back {
+  padding-left: 0.2rem;
+  display: inline-block;
+  float: left;
+  font-size: .2rem;
 }
-.player{
-    display: block;
-    height: 5.3rem;
-    overflow: hidden;
-    position: relative;
 
+.share {
+  padding-right: 0.15rem;
+  display: inline-block;
+  float: right;
+  font-size: .2rem;
 }
-.player>div:nth-child(1) img{
-    width: 30%;
-    height: 30%;
-    position: absolute;
-    margin: 0 auto;
-    top: -0.18rem;
-    left: 1.65rem;
-    z-index: 5;
+
+.title {
+  display: inline-block;
+  font-size: .2rem;
+  margin: 0 auto;
+  width: 2rem;
+  position: absolute;
+  left: 0.9rem;
+}
+
+.title p:nth-child(1) {
+  text-align: center;
+  font-size: 0.18rem;
+}
+
+.title p:nth-child(2) {
+  text-align: center;
+  font-size: 0.09rem;
+}
+
+.musicBody {
+
+  overflow: hidden;
+}
+
+.player {
+  display: block;
+  height: 5.3rem;
+  overflow: hidden;
+  position: relative;
 
 }
 
-
-.play{
-    transform:rotate(10deg);
-    transform-origin: .2rem .2rem;
-    transition: 0.4s;
-}
-.init{
-    transform:rotate(-20deg);
-    transform-origin:  .2rem .2rem;
-    transition: 0.4s;
-}
-
-
-.player>div:nth-child(2){
-    width: 50%;
-    height: 50%;
-    margin: 0 auto;
-    position: absolute;
-    top: 0;
-    left: 0.4rem;
+.player > div:nth-child(1) img {
+  width: 30%;
+  height: 30%;
+  position: absolute;
+  margin: 0 auto;
+  top: -0.18rem;
+  left: 1.65rem;
+  z-index: 5;
 
 }
-.player>div:nth-child(2) img{
-    margin-top: 1rem;
-    width: 3rem;
-    height: 3rem;
-    position: absolute;
-    top: 0;
-    left: 0;
+
+.play {
+  transform: rotate(10deg);
+  transform-origin: .2rem .2rem;
+  transition: 0.4s;
 }
 
-.player>div:nth-child(3) img{
-    width: 2rem;
-    height: 2rem;
-    border-radius: 50%;
-    margin: 0 auto;
-    position: absolute;
-    top: 1.5rem;
-    left: 0.9rem;
+.init {
+  transform: rotate(-20deg);
+  transform-origin: .2rem .2rem;
+  transition: 0.4s;
 }
 
-.playRotate{
-    transform: rotate(360deg);
-    transition: 1000s;
-}
-.playRotateT{
+.player > div:nth-child(2) {
+  width: 50%;
+  height: 50%;
+  margin: 0 auto;
+  position: absolute;
+  top: 0;
+  left: 0.4rem;
 
 }
-.player-fun{
-    display: block;
-    position: absolute;
-    top: 4.3rem;
-    left: .6rem;
+
+.player > div:nth-child(2) img {
+  margin-top: 1rem;
+  width: 3rem;
+  height: 3rem;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
-.player-fun img{
-    width: 20%;
+
+.player > div:nth-child(3) img {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  margin: 0 auto;
+  position: absolute;
+  top: 1.5rem;
+  left: 0.9rem;
+}
+
+.playRotate {
+  transform: rotate(360deg);
+  transition: 1000s;
+}
+
+.playRotateT {
+
+}
+
+.player-fun {
+  display: block;
+  position: absolute;
+  top: 4.3rem;
+  left: .6rem;
+}
+
+.player-fun img {
+  width: 20%;
 }
 
 .progress {
-    position: relative;
+  position: relative;
 
-    height: .76rem;
-    overflow: hidden;
+  height: .76rem;
+  overflow: hidden;
 }
 
 .progress span {
-    position: absolute;
-    top: -0.35rem;
-    width: .9rem;
-    height: 100%;
-    line-height: .8rem;
-    text-align: center;
-    color: rgba(255, 255, 255, .5);
-    font-size: .15rem;
+  position: absolute;
+  top: -0.35rem;
+  width: .9rem;
+  height: 100%;
+  line-height: .8rem;
+  text-align: center;
+  color: rgba(255, 255, 255, .5);
+  font-size: .15rem;
 }
+
 .progress span.current {
-    left: 0;
+  left: 0;
 }
 
 .progress span.duration {
-    right: 0;
+  right: 0;
 }
 
 .progress .proBg {
-    position: relative;
-    margin: .04rem .9rem 0 .9rem;
-    height: .04rem;
-    background: rgba(255, 255, 255, .5);
+  position: relative;
+  margin: .04rem .9rem 0 .9rem;
+  height: .04rem;
+  background: rgba(255, 255, 255, .5);
 }
+
 .progress .proBg .already {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 0;
-    background: #31C27C;
-    -webkit-transition: .3s;
-    transition: .3s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background: #31C27C;
+  -webkit-transition: .3s;
+  transition: .3s;
 }
-.foot{
-    position: relative;
+
+.foot {
+  position: relative;
 }
-.control{
-    position: absolute;
-    top: -0.25rem;
-    left: 0;
+
+.control {
+  position: absolute;
+  top: -0.25rem;
+  left: 0;
 }
-.control span img{
-    width: 20%;
-    height: 20%;
+
+.control span img {
+  width: 20%;
+  height: 20%;
 
 }
 
-.lyric{
-    display: none;
-    height: 5.3rem;
-    overflow: hidden;
-    position: relative;
+.lyric {
+  display: none;
+  height: 5.3rem;
+  overflow: hidden;
+  position: relative;
 
 }
 
 .main {
-    position: relative;
-    margin: 0 .2rem;
-    height: 6.56rem;
-    overflow: hidden;
+  position: relative;
+  margin: 0 .2rem;
+  height: 6.56rem;
+  overflow: hidden;
 }
 
 .main .wrapper {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    -webkit-transition: .3s;
-    transition: .3s;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  -webkit-transition: .3s;
+  transition: .3s;
 }
 
 .main .wrapper p {
-    height: .3rem;
-    line-height: .2rem;
-    text-align: center;
-    color: rgba(255, 255, 255, .5);
-    font-size: .2rem;
-    letter-spacing: .03rem;
+  height: .3rem;
+  line-height: .2rem;
+  text-align: center;
+  color: rgba(255, 255, 255, .5);
+  font-size: .2rem;
+  letter-spacing: .03rem;
 
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .main .wrapper p.select {
-    color: #31C27C;
-    -webkit-transition: .3s;
-    transition: .3s;
+  color: #31C27C;
+  -webkit-transition: .3s;
+  transition: .3s;
 }
 
 .volume {
-    position: relative;
-    height: .56rem;
-    padding-top: 0.2rem;
-    overflow: hidden;
+  position: relative;
+  height: .56rem;
+  padding-top: 0.2rem;
+  overflow: hidden;
 }
 
 .volume span {
-    position: absolute;
-    top: -0.35rem;
-    width: .9rem;
-    height: 100%;
-    line-height: .8rem;
-    text-align: center;
-    color: rgba(255, 255, 255, .5);
-    font-size: .15rem;
+  position: absolute;
+  top: -0.35rem;
+  width: .9rem;
+  height: 100%;
+  line-height: .8rem;
+  text-align: center;
+  color: rgba(255, 255, 255, .5);
+  font-size: .15rem;
 }
+
 .volume span.current {
-    top: -0.15rem;
-    left: 0;
+  top: -0.15rem;
+  left: 0;
 }
 
 .volume span.duration {
-    top: -0.15rem;
-    right: 0;
+  top: -0.15rem;
+  right: 0;
 }
 
 .volume .proBg {
-    position: relative;
-    margin: .04rem .9rem 0 .9rem;
-    height: .04rem;
-    background: rgba(255, 255, 255, .5);
+  position: relative;
+  margin: .04rem .9rem 0 .9rem;
+  height: .04rem;
+  background: rgba(255, 255, 255, .5);
 }
+
 .volume .proBg .already {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 1rem;
-    background: #31C27C;
-    -webkit-transition: .3s;
-    transition: .3s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 1rem;
+  background: #31C27C;
+  -webkit-transition: .3s;
+  transition: .3s;
 }
 

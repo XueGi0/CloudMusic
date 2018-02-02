@@ -20,8 +20,8 @@ export default class HomeList extends React.Component {
               {re.map((item, index) => {
                 return (<li key={index}>
                   <img src={item.picUrl} alt=""/>
-                  <span>{item.name}</span><br/>
-                  <span>{item.artistName}</span>
+                  <span id="wode">{item.name}</span><br/>
+                  <span id="wode">{item.artistName}</span>
                 </li>);
               })}
             </ul>
@@ -39,7 +39,7 @@ export default class HomeList extends React.Component {
           {result ? result.map((item, index) => {
             return index < 6 ? (<li key={index}>
               <img src={item.picUrl} alt=""/>
-              <p>{item.name}</p>
+              <p id="wode">{item.name}</p>
             </li>) : null;
           }) : null}
         </ul>

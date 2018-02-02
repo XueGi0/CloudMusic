@@ -15,10 +15,10 @@ export default class Exclusive extends React.Component {
           {result ? result.map((item, index) => {
             return index < 2 ? (<li key={index}>
               <img src={item.sPicUrl} alt=""/>
-              <p>{item.name}</p>
+              <p id="wode">{item.name}</p>
             </li>) : (<li key={index}>
               <img src={item.picUrl} alt=""/>
-              <p>{item.name}</p>
+              <p id="wode">{item.name}</p>
             </li>)
           }) : null}
         </ul>
