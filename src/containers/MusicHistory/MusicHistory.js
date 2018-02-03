@@ -32,7 +32,7 @@ class MusicHistory extends React.Component {
         <div className="list-bottom">
           <ul className="late_musicList">
             {this.props.historyList ? this.props.historyList.weekData.map((item, index) => {
-              return <Link to={{pathname: '/player', songId: item.id}} key={index}>
+              return <Link to={{pathname: '/playlist/detail', songId: item.id}} key={index}>
                 <li className="listItem">
                   <p>
                     {item.song.name}<br/>

@@ -49,7 +49,7 @@ ReactDOM.render(
           <Route path="/share" component={Share}/>
           <Route path="/music" component={Music}/>
           <Route path="/profile" component={Profile}/>
-          <Route path="/playList" component={ListDetail}/>
+          <Route path="/playList" exact={true} component={ListDetail}/>
           <Route path="/message" component={Message}/>
           <Route path="/vip" component={VIP}/>
           <Route path="/drive" component={Drive}/>
@@ -61,7 +61,7 @@ ReactDOM.render(
           <Route path="/timer" component={Timer}/>
           <Route path="/clock" component={Clock}/>
           <Route path="/regard" component={Regard}/>
-          <Route path="/player" component={Player}/>
+          <Route path="/playlist/detail" component={Player}/>
           <Route path="/record" component={MusicHistory}/>
           <Route path="/dj" component={MyFM}/>
           <Route path="/collection" component={Mycollection}/>

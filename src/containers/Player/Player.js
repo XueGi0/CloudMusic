@@ -11,6 +11,7 @@ import musicBtn4 from '../../images/img/play_icn_more_prs.png'
 import musicFoot1 from '../../images/img/play_icn_loop_prs.png'
 import musicFoot2 from '../../images/img/lock_btn_prev.png'
 import musicFoot3 from '../../images/img/lock_btn_play.png'
+import musicFoot7 from '../../images/img/lock_btn_pause.png'
 import musicFoot4 from '../../images/img/lock_btn_next.png'
 import musicFoot5 from '../../images/img/play_icn_src_prs.png'
 import musicFoot6 from '../../images/img/play_btn_pause_prs.png'
@@ -23,7 +24,9 @@ import {connect} from 'react-redux';
 class MessageBox extends React.Component {
   componentDidMount() {
     let songId = this.props.location.songId;
+    // this.props.getLyricAPI(songId);
     this.props.getSongDetailAPI(songId);
+    // this.props.getMusicUrlAPI(songId);
   }
 
   changePlayer = () => {
@@ -45,12 +48,12 @@ class MessageBox extends React.Component {
     if (this.audio.paused) {
       this.audio.play();
       this.bang.className = 'playEffect play';
-      this.rotate.className = 'playRotate'
+      this.rotate.className = 'playRotate';
 
     } else {
       this.audio.pause();
       this.bang.className = 'playEffect init';
-      this.rotate.className = 'playRotateT'
+      this.rotate.className = 'playRotateT';
     }
     this.autoTimer = setInterval(this.computedAlready, 1000);
   };
@@ -119,16 +122,20 @@ class MessageBox extends React.Component {
     // console.log(this.header, this.footer, this.main);
     // this.computedMain();
     // window.onresize = this.computedMain;
-    console.log(this.props);
+    let result = this.props.detailLists.result;
+
+
     return (
       <section className="play_container">
         <audio src={music} preload="" className="musicAudio" ref={x => this.audio = x}/>
-        <div className="backgroundImg"/>
+        <div className="backgroundImg"><img src={result ? result.tracks ? result.creator.backgroundUrl : null : null}
+                                            alt=""/></div>
         <div className="playerHeader" ref={x => this.header = x}>
           <img src={back} alt="" className="pic1" onClick={this.back}/>
           <p className="play_title">
-            <span className="art">我的梦</span><br/>
-            <span className="name">张靓颖</span>
+            <span
+              className="art">{result ? result.tracks ? result.tracks[0].name : null : null}</span><br/>
+            <span className="name">{result ? result.tracks ? result.tracks[0].artists[0].name : null : null}</span>
           </p>
           <img src={transpond} alt="" className="pic2"/>
         </div>
@@ -136,7 +143,9 @@ class MessageBox extends React.Component {
           <div className="player" ref={x => this.player = x} onClick={this.changePlayer}>
             <div><img className="playEffect init" src={picture1} alt="" ref={x => this.bang = x}/></div>
             <div><img src={picture2} alt=""/></div>
-            <div><img className="playRotate playRotateT" src={picture3} alt="" ref={x => this.rotate = x}/></div>
+            <div><img className="playRotate playRotateT"
+                      src={result ? result.tracks ? result.tracks[0].album.picUrl : null : null} alt=""
+                      ref={x => this.rotate = x}/></div>
             <div className="player-fun">
               <img className="love" src={picture4} onClick={this.loveAth} ref={x => this.loveA = x}/>
               <img src={musicBtn2}/>
@@ -215,7 +224,8 @@ class MessageBox extends React.Component {
         <div className="foot" ref={x => this.footer = x}>
           <div className="progress">
             <span className="current" ref={x => this.current = x}>00:00</span>
-            <span className="duration" ref={x => this.duration = x}>03:40</span>
+            <span className="duration"
+                  ref={x => this.duration = x}>{result ? result.tracks ? ('0' + new Date(result.tracks[0].duration).getMinutes() + ':' + '0' + new Date(result.tracks[0].duration).getSeconds()) : null : null}</span>
             <div className="proBg">
               <div className="already" ref={x => this.already = x}>
               </div>
@@ -242,8 +252,9 @@ class MessageBox extends React.Component {
           </ul>
           <div className="playerListClose"><p>关闭</p></div>
         </div>
-      </section>
-    )
+      </section>)
   }
 }
 export default connect(state => ({...state.player}), actions)(MessageBox);
+
+

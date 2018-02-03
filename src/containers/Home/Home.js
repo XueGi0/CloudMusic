@@ -19,7 +19,6 @@ class Home extends React.Component {
     this.props.getSongListAPI();
     this.props.getExclusiveAPI();
     this.props.getNewestMvAPI();
-
   }
 
   render() {

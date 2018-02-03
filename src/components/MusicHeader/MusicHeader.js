@@ -6,7 +6,7 @@ export default class MusicHeader extends React.Component {
     return <div className="MusicHeader">
       <Link to={'/login'}><i className="pic1"></i></Link>
       <span>我的音乐</span>
-      <Link to={'/player'}><i className="pic2"></i></Link>
+      <Link to={'/playlist/detail'}><i className="pic2"></i></Link>
     </div>
   }
 }

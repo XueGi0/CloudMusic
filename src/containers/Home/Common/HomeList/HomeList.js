@@ -20,7 +20,7 @@ export default class HomeList extends React.Component {
             <ul className="list_con">
               {re.map((item, index) => {
                 return (<li key={index}>
-                  <Link to={'/playList'}>
+                  <Link to={'/playList'} exact="true">
                     <img src={item.picUrl} alt=""/>
                     <span id="wode">{item.name}</span><br/>
                     <span id="wode">{item.artistName}</span>

@@ -2,7 +2,7 @@ import * as Types from '../action-types';
 import {getPlayList, getListDetail, getHotdj, getHotList, getRencentHistory} from '../../api/list';
 import {getSongList, getExclusive, getNewestMv, getSearch, getPrivateFM} from '../../api/Home';
 import {toLogin, getNumber} from "../../api/Login";
-import {getSongDetail} from '../../api/Player';
+import {getSongDetail, getLyric, getMusicUrl} from '../../api/Player';
 
 
 let actions = {
@@ -56,7 +56,6 @@ let actions = {
         }, 1000)
       })
     }
-
   },
   getSearchAPI(keywords){
     return function (dispatch, getState) {
@@ -76,6 +75,16 @@ let actions = {
   getSongDetailAPI(id){
     return function (dispatch, getState) {
       dispatch({type: Types.GET_SONG_DETAIL, payload: getSongDetail(id)})
+    }
+  },
+  getLyricAPI(id){
+    return function (dispatch, getState) {
+      dispatch({type: Types.GET_SONG_DETAIL, payload: getLyric(id)})
+    }
+  },
+  getMusicUrlAPI(id){
+    return function (dispatch, getState) {
+      dispatch({type: Types.GET_SONG_DETAIL, payload: getMusicUrl(id)})
     }
   }
 };

@@ -17,10 +17,14 @@ class ListDetail extends React.Component {
   };
 
   render() {
+    console.log(this.props);
     return <div className="list_detail">
       <ProfileHeader title={"歌单"} back={this.back} Url={Url}/>
       <div className="content">
         <div className="detailTop">
+          <img
+            src={this.props.listDetail ? this.props.listDetail.result ? this.props.listDetail.result.creator.backgroundUrl : null : null}
+            alt="" className="backgroundImg"/>
           <div className="top-top">
             <img
               src={this.props.listDetail ? this.props.listDetail.result ? this.props.listDetail.result.creator.avatarUrl : null : null}
@@ -67,7 +71,7 @@ class ListDetail extends React.Component {
           </ul>
           <ul className="bottom-bottom">
             {this.props.listDetail ? this.props.listDetail.result ? this.props.listDetail.result.tracks.map((item, index) => {
-              return <Link to={{pathname: '/player', songId: item.id}} key={index}>
+              return <Link to={{pathname: '/playlist/detail', songId: item.id}} key={index}>
                 <li>
                   <span>{index + 1}</span>
                   <p>

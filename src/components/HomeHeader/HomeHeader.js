@@ -15,7 +15,7 @@ export default class HomeHeader extends React.Component {
     return <div className="HomeHeader">
       <i className="pic1"></i>
       <Link to={'/search'} className="input"><input type="text" placeholder="猜你喜欢 告白气球"/></Link>
-      <Link to={'/player'}>
+      <Link to={'/playlist/detail'}>
         <ul className="pic2">
           <li></li>
           <li></li>

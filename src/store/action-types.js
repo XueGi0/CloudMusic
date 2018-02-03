@@ -37,4 +37,10 @@ export const GET_NUMBER = 'GET_NUMBER';
 //->获取歌单详情
 export const GET_SONG_DETAIL = 'GET_SONG_DETAIL';
 
+//->获取歌词
+export const GET_LYRIC = 'GET_LYRIC';
+
+//->获取歌曲路径
+export const GET_MUSIC_URL = 'GET_MUSIC_URL';
+
 
