@@ -45,15 +45,14 @@ let actions = {
       dispatch({type: Types.GET_HOTLIST, payload: getHotList()})
     }
   },
-  toLoginAPI(username, password){
+  toLoginAPI(username, password,history){
     return function (dispatch, getState) {
-      toLogin(username, password).then(function (data) {
+      toLogin('18811487139', '246135Zwc').then(function (data) {
         dispatch({type: Types.SET_USER_INFO, user: data});
-        if (data.err === 0) {
-        }
-        // setTimeout(()=>{
-        //     history.push('/profile');//成功跳转到个人中心页面
-        // },1000)
+        localStorage.setItem("id","539241835");
+        setTimeout(()=>{
+            history.push('/profile');//成功跳转到个人中心页面
+        },1000)
       })
     }
 
