@@ -10,9 +10,9 @@ export default class OnLine extends React.Component {
 
   render() {
     return (
-      <div className="message">
+      <div className="online">
         <ProfileHeader title={"在线听歌免流量"} back={this.back} Url={Url}/>
-        <div className="message-content">
+        <div className="content">
         </div>
       </div>
     )

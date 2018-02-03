@@ -1,14 +1,14 @@
 import React from 'react';
 import './Nav.less';
-import {Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 
 export default class Nav extends React.Component {
   render() {
     return (
-      <ul className="nav">
-        <li className="active"><Link to={'/'}>音乐</Link></li>
-        <li><Link to={'/video'}>视频</Link></li>
-        <li><Link to={'/station'}/>电台</li>
+      <ul id="nav">
+        <NavLink to={'/'} exact={true} className="nav_list">音乐</NavLink>
+        <NavLink to={'/video'} className="nav_list">视频</NavLink>
+        <NavLink to={'/station'} className="nav_list">电台</NavLink>
       </ul>
     )
   }

@@ -1,0 +1,104 @@
+.videos {
+
+
+  #nav {
+    width: 100%;
+    height: .4rem;
+    display: flex;
+    justify-content: space-around;
+    padding: 0 10%;
+    position: fixed;
+    top: .53rem;
+    left: 0;
+    z-index: 99;
+    background: #f9f9f9;
+    margin-bottom:0;
+
+    .nav_list {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      font-size: .18rem;
+      line-height: .4rem;
+      color: #000;
+
+      &.active {
+        color: #ad5049;
+        border-bottom: .02rem solid #e9484d;
+      }
+    }
+  }
+
+  .myVideo {
+    width: 100%;
+    position: absolute;
+    top: .93rem;
+    bottom: -.4rem;
+    left: 0;
+    right: 0;
+    overflow-y: scroll;
+
+  }
+}
+
+.myVideo .video1 {
+  width: 100%;
+  height: 2.7rem;
+  overflow: hidden;
+
+}
+
+.myVideo .video1 .media1 {
+  height: 2.1rem;
+  width: 100%;
+  float: left;
+}
+
+.myVideo .video1 .videoText {
+  position: relative;
+  height: 0.5rem;
+  float: left;
+}
+
+.myVideo .video1 .videoText p {
+  margin: 0.05rem 0.2rem;
+  width: 2.1rem;
+  font-size: 0.17rem;
+  line-height: 0.25rem;
+  overflow: hidden;
+}
+
+.videoOthers {
+  position: absolute;
+  left: 2.4rem;
+  top: 0.1rem;
+  width: 1.5rem;
+  display: inline-block;
+}
+
+.videoOthers li {
+  float: left;
+}
+
+.video1 .videoText .videoOthers li p {
+
+  margin-left: -0.01rem;
+  font-size: 0.12rem;
+}
+
+.videoLike, .videoMessage, .videoMore {
+  font-size: .12rem;
+  width: .45rem;
+}
+
+.videoFoot {
+  display: none;
+  width: 100%;
+  height: 3.3rem;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background: rgba(112, 112, 112, 0.9);
+}

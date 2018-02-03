@@ -14,3 +14,11 @@ export function getExclusive() {
 export function getNewestMv() {
   return axios.get('/personalized/mv');
 }
+//->搜索
+export function getSearch(keywords) {
+  return axios.get(`/search/${keywords}`)
+}
+//->私人FM
+export function getPrivateFM() {
+  return axios.get('/personal_fm')
+}

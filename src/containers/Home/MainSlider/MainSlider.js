@@ -11,8 +11,6 @@ import g from './banner-6.jpg'
 let items = [{src: a}, {src: b}, {src: c}, {src: d}, {src: e}, {src: f}, {src: g}];
 export default class MainSlider extends Component {
   render() {
-    //轮播图数据
-    let sliders = this.props.sliders;
     return (
       <div className="cwj-slider-box">
         <Carousel autoplay>

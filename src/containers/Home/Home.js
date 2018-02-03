@@ -23,17 +23,17 @@ class Home extends React.Component {
   }
 
   render() {
-    console.log(this.props);
-
     return (
       <div className="container">
         <HomeHeader/>
         <Nav/>
-        <MainSlider/>
-        <CenterNav/>
-        <HomeList SongLists={this.props.home.songLists}/>
-        <Exclusive ExclusiveLists={this.props.home.exclusiveLists}/>
-        <HomeList SongLists={this.props.home.songLists} NewestLists={this.props.home.newestLists || []}/>
+        <div className="home_content">
+          <MainSlider/>
+          <CenterNav/>
+          <HomeList SongLists={this.props.home.songLists}/>
+          <Exclusive ExclusiveLists={this.props.home.exclusiveLists}/>
+          <HomeList SongLists={this.props.home.songLists} NewestLists={this.props.home.newestLists || []}/>
+        </div>
       </div>
     )
   }

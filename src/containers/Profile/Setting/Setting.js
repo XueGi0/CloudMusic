@@ -10,9 +10,9 @@ export default class Setting extends React.Component {
 
   render() {
     return (
-      <div className="message">
+      <div className="setting">
         <ProfileHeader title={"设置"} back={this.back} Url={Url}/>
-        <div className="message-content">
+        <div className="content">
         </div>
       </div>
     )

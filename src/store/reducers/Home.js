@@ -3,7 +3,9 @@ import * as Types from '../action-types';
 let initState = {
   songLists: [],
   exclusiveLists: [],
-  newestLists: {}
+  newestLists: {},
+  searchLists: {},
+  privateFmLists: {},
 };
 
 function home(state = initState, actions) {
@@ -13,7 +15,11 @@ function home(state = initState, actions) {
     case Types.EXCLUSIVE_BROADCAST:
       return {...state, exclusiveLists: actions.payload};
     case Types.NEWEST_MV:
-      return {...state, newestLists: actions.payload}
+      return {...state, newestLists: actions.payload};
+    case Types.GET_SEARCH:
+      return {...state, searchLists: actions.payload};
+    case Types.GET_PRIVATE_FM:
+      return {...state, privateFmLists: actions.payload}
   }
   return state;
 }

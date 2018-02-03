@@ -16,6 +16,9 @@ import Skin from './containers/Profile/Skin/Skin';
 import Timer from './containers/Profile/Timer/Timer';
 import Clock from './containers/Profile/Clock/Clock';
 import Regard from './containers/Profile/Regard/Regard';
+import Search from './containers/Home/Search/Search';
+import Video from './containers/Home/Video/Video';
+import PrivateFM from './containers/Home/PrivateFM/PrivateFM';
 
 import App from './containers/App';
 import {Provider} from 'react-redux';
@@ -30,6 +33,9 @@ ReactDOM.render(
         <Switch>
           <Route path="/" exact={true} component={Home}/>
           <Route path="/user" component={List}/>
+          <Route path="/personal_fm" component={PrivateFM}/>
+          <Route path="/search" component={Search}/>
+          <Route path="/video" component={Video}/>
           <Route path="/music" component={Music}/>
           <Route path="/profile" component={Profile}/>
           <Route path="/playList" component={ListDetail}/>

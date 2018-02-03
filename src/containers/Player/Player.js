@@ -1,10 +1,21 @@
 import React from 'react';
-import './Player.css'
+import './Player.css';
+// import {Link} from 'react-router-dom';
 import picture1 from '../../images/img/play_needle.png'
 import picture2 from '../../images/img/play_disc.png'
 import picture3 from '../../images/img/myDream.jpg'
 import picture4 from '../../images/img/play_icn_love_prs.png'
 import music from '../../images/img/myDream.m4a'
+import musicBtn2 from '../../images/img/play_icn_dld.png'
+import musicBtn3 from '../../images/img/play_icn_cmt_prs.png'
+import musicBtn4 from '../../images/img/play_icn_more_prs.png'
+import musicFoot1 from '../../images/img/play_icn_loop_prs.png'
+import musicFoot2 from '../../images/img/lock_btn_prev.png'
+import musicFoot3 from '../../images/img/lock_btn_play.png'
+import musicFoot4 from '../../images/img/lock_btn_next.png'
+import musicFoot5 from '../../images/img/play_icn_src_prs.png'
+import musicFootLoveRed from '../../images/img/play_icn_loved_prs.png'
+
 
 export default class MessageBox extends React.Component {
   changePlayer = () => {
@@ -27,10 +38,22 @@ export default class MessageBox extends React.Component {
 
     } else {
       this.audio.pause();
-      this.bang.className = 'playEffect init'
+      this.bang.className = 'playEffect init';
       this.rotate.className = 'playRotateT'
     }
 
+  };
+  back = () => {
+    this.props.history.goBack();
+  };
+  loveBth = (e) => {
+
+    e.stopPropagation();
+    this.loveB.style.display = 'none';
+  };
+  loveAth = (e) => {
+    e.stopPropagation();
+    this.loveB.style.display = 'block';
   };
 
   render() {
@@ -39,7 +62,7 @@ export default class MessageBox extends React.Component {
         <audio src={music} preload="" className="musicAudio" ref={x => this.audio = x}></audio>
         <div className="backgroundImg"></div>
         <div className="header">
-          <div className="back">返回</div>
+          <div className="back" onClick={this.back}>返回</div>
           <div className="title">
             <p>我的梦</p>
             <p>张靓颖</p>
@@ -48,16 +71,20 @@ export default class MessageBox extends React.Component {
         </div>
         <div className="musicBody">
           <div className="player" ref={x => this.player = x} onClick={this.changePlayer}>
-            <div><img className="playEffect init" src={picture1} alt="" ref={x => this.bang = x}/></div>
+            <div><img className="playEffect init" src={picture1} alt="" ref={x => this.bang = x} /></div>
             <div><img src={picture2} alt=""/></div>
             <div><img className="playRotate playRotateT" src={picture3} alt="" ref={x => this.rotate = x}/></div>
             <div className="player-fun">
-              <span><img src={picture4}/></span>
-              <span><img src={picture4}/></span>
-              <span><img src={picture4}/></span>
-              <span><img src={picture4}/></span>
+              <img className="love" src={picture4} onClick={this.loveAth} ref={x => this.loveA = x} alt=""/>
+              <img src={musicBtn2} alt=""/>
+              <img src={musicBtn3} alt=""/>
+              <img src={musicBtn4} alt=""/>
+              <img className="loveRed" onClick={this.loveBth} src={musicFootLoveRed} ref={x => this.loveB = x}/>
             </div>
+            <div className="addMusic"><img src={musicFootLoveRed} alt=""/><p className="addtext">已添加到我喜欢的音乐</p></div>
+            <div className="delMusic"><p className="deltext">已取消喜欢</p></div>
           </div>
+
           <div className="lyric" ref={x => this.lyric = x} onClick={this.changeLyric}>
             <div className="shelter "></div>
             <div className="volume">
@@ -151,12 +178,23 @@ export default class MessageBox extends React.Component {
             </div>
           </div>
           <div className="control">
-            <span><img src={picture4}/></span>
-            <span><img src={picture4}/></span>
-            <span><img className="playMusic" src={picture4} onClick={this.playMusic}/></span>
-            <span><img src={picture4}/></span>
-            <span><img src={picture4}/></span>
+            <span><img src={musicFoot1} alt=""/></span>
+            <span><img src={musicFoot2} alt=""/></span>
+            <span><img className="playMusic" src={musicFoot3} onClick={this.playMusic} alt=""/></span>
+            <span><img src={musicFoot4} alt=""/></span>
+            <span><img src={musicFoot5} alt=""/></span>
           </div>
+        </div>
+        <div className="playMore">
+          <div className="moreBtn">
+            <span><p>列表循环</p></span>
+            <span><p>删除</p></span>
+            <span><p>收藏全部</p></span>
+          </div>
+          <ul className="playerList">
+            <li><p>我的梦</p></li>
+          </ul>
+          <div className="playerListClose"><p>关闭</p></div>
         </div>
       </section>
     )

@@ -9,9 +9,9 @@ export default class Regard extends React.Component {
 
   render() {
     return (
-      <div className="message">
+      <div className="regard">
         <ProfileHeader title={"关于网易云音乐"} back={this.back} Url={Url}/>
-        <div className="message-content">
+        <div className="content">
           Regard
         </div>
       </div>

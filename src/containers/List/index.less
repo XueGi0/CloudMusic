@@ -16,12 +16,17 @@ a {
 
 .listBigBox {
   width: 100%;
-  padding-top: .53rem;
-  padding-bottom: .53rem;
+  position: absolute;
+  top: .53rem;
+  bottom: .53rem;
+  left: 0;
+  right: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .listBox {
-  //overflow-y: scroll;
+
   .listTop {
     width: 100%;
     font-size: .16rem;
@@ -150,7 +155,7 @@ a {
           padding: 0;
           margin: 0;
           float: left;
-          margin-top:.1rem;
+          margin-top: .1rem;
           height: .5rem;
           font-size: .16rem;
           line-height: .4rem;
@@ -162,7 +167,7 @@ a {
             font-size: .12rem;
             background: #fff;
             color: gray;
-            line-height:.05rem;
+            line-height: .05rem;
           }
         }
         .aaa {

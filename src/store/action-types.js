@@ -13,3 +13,9 @@ export const GET_PLAYLIST = ' GET_PLAYLIST';
 //获取歌单详情
 export const GET_PLAYLISTDETAIL = 'GET_PLAYLISTDETAIL';
 
+//->搜索
+export const GET_SEARCH = 'GET_SEARCH';
+
+//->私人FM
+export const GET_PRIVATE_FM = 'GET_PRIVATE_FM';
+

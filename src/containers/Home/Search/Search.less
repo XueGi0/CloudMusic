@@ -1,0 +1,110 @@
+.searchBox {
+
+  .searchHeader {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    background: #d43b33;
+    width: 100%;
+    height: .53rem;
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: .12rem .1rem 0;
+    font-family: Arial, "Hiragino Sans GB", "Microsoft Yahei", "Microsoft Sans Serif", sans-serif;
+
+    input {
+      width: 85%;
+      height: .29rem;
+      border-radius: .29rem;
+      float: left;
+      border: 1px solid transparent;
+      text-align: left;
+      font-size: .14rem;
+      text-indent: .3rem;
+      color: #c3c3c3;
+
+    }
+    .search {
+      position: absolute;
+      left: .2rem;
+      top: .17rem;
+      display: block;
+      width: .2rem;
+      height: .2rem;
+      background: url("../search.png") no-repeat center center;
+      background-size: cover;
+    }
+    .cancel {
+      font-size: .18rem;
+      color: #fff;
+    }
+  }
+  .content {
+    position: absolute;
+    top: .53rem;
+    bottom: .53rem;
+    left: 0;
+    right: 0;
+    width: 100%;
+    overflow-y: scroll;
+    background-color: #fff;
+    z-index: 5;
+
+    .singer {
+      width: 100%;
+      height: .5rem;
+      background: #fff;
+      border-bottom: .01rem solid #c3c3c3;
+      font-size: .14rem;
+      color: #646566;
+      line-height: .5rem;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+
+      .icon {
+        display: inline-block;
+        width: .5rem;
+        height: .5rem;
+        background: url("./music_icn_artist.png") no-repeat;
+        background-size: cover;
+      }
+      .arrow {
+        margin-top: .18rem;
+        display: inline-block;
+        margin-left: .1rem;
+        width: .15rem;
+        height: .15rem;
+        background: url("./arrow.png") no-repeat;
+        background-size: cover;
+      }
+    }
+    .hot {
+
+      .hot_search {
+        height: .3rem;
+        width: 100%;
+        font-size: .12rem;
+        color: #646566;
+        line-height: .35rem;
+      }
+      .hot_lists {
+        margin-bottom: 0;
+        span {
+          height: .3rem;
+          padding: .05rem .1rem;
+          font-size: .14rem;
+          line-height: .15rem;
+          border: .01rem solid;
+          border-radius: .2rem;
+          margin: .1rem;
+          float: left;
+        }
+      }
+    }
+  }
+}

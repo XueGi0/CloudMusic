@@ -9,9 +9,9 @@ export default class Skin extends React.Component {
 
   render() {
     return (
-      <div className="message">
+      <div className="skin">
         <ProfileHeader title={"个性换肤"} back={this.back} Url={Url}/>
-        <div className="message-content">
+        <div className="content">
         </div>
       </div>
     )
