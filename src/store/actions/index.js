@@ -1,7 +1,7 @@
 import * as Types from '../action-types';
 import {getPlayList, getListDetail, getHotdj, getHotList, getRencentHistory} from '../../api/list';
 import {getSongList, getExclusive, getNewestMv, getSearch, getPrivateFM} from '../../api/Home';
-import {toLogin} from "../../api/Login";
+import {toLogin,getNumber} from "../../api/Login";
 
 
 let actions = {
@@ -66,7 +66,12 @@ let actions = {
     return function (dispatch, getState) {
       dispatch({type: Types.GET_PRIVATE_FM, payload: getPrivateFM()})
     }
-  }
+  },
+    getNumberAPI(){
+      return function (dispatch,getState) {
+          dispatch({type:Types.GET_NUMBER,payload:getNumber()})
+      }
+    }
 };
 
 

@@ -31,4 +31,7 @@ export const GET_RENCENTHISTORY = 'GET_RENCENTHISTORY';
 //登录
 export const SET_USER_INFO = 'SET_USER_INFO';
 
+//获取验证码
+export const GET_NUMBER='GET_NUMBER';
+
 

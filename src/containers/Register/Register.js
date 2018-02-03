@@ -1,11 +1,15 @@
 import React from 'react';
 import './index.less'
+import {connect} from "react-redux";
 import MHeader from "../../components/MHeader/MHeader";
-import Footer from "../../components/Footer/Footer";
-export default class Register extends React.Component {
+import {Link,withRouter} from "react-router-dom";
+import actions from "../../store/actions";
+
+class Register extends React.Component {
     back = () => {
         this.props.history.goBack();
     };
+
     constructor() {
         super();
         this.state = {
@@ -17,6 +21,7 @@ export default class Register extends React.Component {
             ]
         }
     }
+
 
     //检查手机号和验证码的状态
     handleClick = () => {
@@ -54,15 +59,13 @@ export default class Register extends React.Component {
     };
 
     //获取API中手机号和验证码登录后显示随机生成的用户名
-    // async getRegister() {
-    //     let $phoneNum = this.mobile.value;
-    //     let $checkNode = this.checkNum.value;
-    //     let checkNodeNum = await toRegister($phoneNum, $checkNode);
-    //     this.registerUser=checkNodeNum.user;
-    //     if (this.registerUser) {
-    //         this.props.history.push("/usercenter");
-    //     }
-    // }
+    getRegister = () => {
+        let checkNodeNum = this.props.getNumberAPI();
+        this.registerUser = checkNodeNum.user;
+        if (this.registerUser) {
+            this.props.history.push("/login");
+        }
+    }
 
     //手机号码一旦输入相应提示信息消失
     handleInputPhoneNum = (e) => {
@@ -75,14 +78,12 @@ export default class Register extends React.Component {
     };
 
     //获取API中的验证码的接口
-    // async getCodeFn() {
-    //     let $phoneNum = this.mobile.value;
-    //     let checkNode = await getCode($phoneNum);
-    //     //this.phoneCheckNum = checkNode.mobileCode;//将获取的验证码放到实例上。
-    //     setTimeout(() => {
-    //         this.checkNum.value = checkNode.mobileCode;
-    //     }, 3000);
-    // }
+    getCodeFn = () => {
+        let checkNode = this.props.getNumberAPI();
+        setTimeout(() => {
+            this.checkNum.value = checkNode.mobileCode;
+        }, 3000);
+    }
 
     //点击获取验证码，并且进入倒计时读秒状态
     getCheckNum = () => {
@@ -117,7 +118,11 @@ export default class Register extends React.Component {
         }
 
         //执行获取验证码
-        this.getCodeFn();
+        this.props.getNumberAPI();
+        setTimeout(()=>{
+            this.str=this.props.number.img;
+            this.captcha.innerHTML=this.str.replace(/\\/g, '');
+        },3000);
     };
     //实现倒计时
     timerBack = () => {
@@ -147,7 +152,13 @@ export default class Register extends React.Component {
             $box.style.display = "none";
         }
     };
+
     render() {
+        if (this.props.number) {
+            let img = this.props.number.img;
+            img = JSON.parse(JSON.stringify(img));
+            console.log(img)
+        }
         return (
             <div className="phone">
                 <MHeader>
@@ -166,14 +177,19 @@ export default class Register extends React.Component {
                     </div>
                     <div className="pwd-panel">
                         <div className="check-numBox">
-                            <input type="text" className="check-num" placeholder="短信验证码" ref={x => this.checkNum = x}
+                            <input type="text" className="check-num" placeholder="请输入验证码" ref={x => this.checkNum = x}
                                    onKeyUp={this.handleCheckNum}/>
                         </div>
+                        <div className="captcha" ref={x=>this.captcha=x}></div>
                         <div className="get-num">
                             <a href="javascript:;" onClick={this.getCheckNum} ref={x => this.sendBtn = x}>获取验证码</a>
                         </div>
                     </div>
-                    <a className="phone-btn">下一步</a>
+                    <div className="phone-dialog" ref={x => this.box = x}>
+                        <div className="dialog-logo">!</div>
+                        <p className="dialog-tit" ref={x => this.tips = x}></p>
+                    </div>
+                    <Link className="phone-btn" to="/Phone">下一步</Link>
                 </div>
                 <div className="login-footer">
                     <span>其他登陆方式</span>
@@ -194,3 +210,5 @@ export default class Register extends React.Component {
         )
     }
 }
+
+export default withRouter(connect(state => ({...state.session}), actions)(Register));

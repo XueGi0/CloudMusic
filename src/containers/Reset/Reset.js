@@ -1,5 +1,6 @@
 import React from 'react';
-import './index.less'
+import './index.less';
+import {Link} from 'react-router-dom';
 import MHeader from "../../components/MHeader/MHeader";
 import Footer from "../../components/Footer/Footer";
 export default class Reset extends React.Component {
@@ -23,7 +24,7 @@ export default class Reset extends React.Component {
                         <i className="iconfont icon-suo"/>
                         <input type="password" placeholder="设置登陆密码，不少于6位"/>
                     </div>
-                    <a className="phone-btn">下一步</a>
+                    <Link className="phone-btn" to={'/Phone'}>下一步</Link>
                 </div>
             </div>
         )
