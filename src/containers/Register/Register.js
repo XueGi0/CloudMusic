@@ -14,10 +14,10 @@ class Register extends React.Component {
         super();
         this.state = {
             tipsAry: [
-                "请输入手机号码~~",
-                "手机号码格式不正确~~",
-                "请输入短信验证码~~",
-                "短信验证码不正确~~"
+                "请输入手机号码",
+                "手机号码格式不正确",
+                "请输入短信验证码",
+                "短信验证码不正确"
             ]
         }
     }
@@ -157,7 +157,6 @@ class Register extends React.Component {
         if (this.props.number) {
             let img = this.props.number.img;
             img = JSON.parse(JSON.stringify(img));
-            console.log(img)
         }
         return (
             <div className="phone">
