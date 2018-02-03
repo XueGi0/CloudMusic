@@ -24,6 +24,10 @@ import Player from './containers/Player/Player';
 import MusicHistory from "./containers/MusicHistory/MusicHistory";
 import MyFM from "./containers/MyFM/MyFM";
 import Mycollection from "./containers/Mycollection/Mycollection";
+import Login from "./containers/Login/Login";
+import Register from "./containers/Register/Register";
+import Phone from "./containers/Phone/Phone";
+import Reset from "./containers/Reset/Reset";
 
 ReactDOM.render(
   <Provider store={store}>
@@ -49,6 +53,10 @@ ReactDOM.render(
           <Route path="/record" component={MusicHistory}/>
           <Route path="/dj" component={MyFM}/>
           <Route path="/collection" component={Mycollection}/>
+          <Route path="/login" component={Login}/>
+          <Route path="/register" component={Register}/>
+          <Route path="/phone" component={Phone}/>
+          <Route path="/reset" component={Reset}/>
         </Switch>
       </App>
     </Router>

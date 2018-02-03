@@ -22,3 +22,6 @@ export const GET_HOTLIST='GET_HOTLIST';
 //获取最近播放记录
 export const GET_RENCENTHISTORY='GET_RENCENTHISTORY';
 
+//登录
+export const SET_USER_INFO='SET_USER_INFO';
+

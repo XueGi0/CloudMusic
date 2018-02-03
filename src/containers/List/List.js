@@ -18,7 +18,6 @@ class List extends React.Component {
     }
     move=(e)=>{
         if(e.target!==this.state.point){
-            console.log(this.box.children);
             for (let key in this.box.children) {
                 if (this.box.children.hasOwnProperty(key)) {
                     this.box.children[key].children[1].style.right='-80px';

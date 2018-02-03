@@ -1,6 +1,8 @@
 import * as Types from '../action-types';
 import {getPlayList, getListDetail, getHotdj, getHotList, getRencentHistory} from '../../api/list';
 import {getSongList, getExclusive, getNewestMv} from '../../api/Home';
+import {toLogin} from "../../api/Login";
+
 let actions = {
     getSongListAPI(){
         return function (dispatch, getState) {
@@ -40,6 +42,17 @@ let actions = {
     getHotListAPI(){
         return function (dispatch,getState) {
             dispatch({type:Types.GET_HOTLIST,payload:getHotList()})
+        }
+    },
+    toLoginAPI(username,password){
+        return function (dispatch,getState) {
+            toLogin(username,password).then(function (data) {
+                dispatch({type:Types.SET_USER_INFO,user:data});
+                if(data.err===0){}
+                // setTimeout(()=>{
+                //     history.push('/profile');//成功跳转到个人中心页面
+                // },1000)
+            })
         }
     }
 };

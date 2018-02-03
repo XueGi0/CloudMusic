@@ -2,8 +2,9 @@ import {combineReducers} from 'redux'
 
 import home from './Home';
 import list from './list';
+import session from './session';
 
 let reducers = combineReducers({
-  home, list
+  home, list,session,
 });
 export default reducers;
