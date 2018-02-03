@@ -44,6 +44,41 @@ export default class VIP extends React.Component {
               <li><img src={g} alt=""/></li>
             </ul>
           </div>
+          <ul className="vip-buy">
+            <li className="vip-buy-item">
+              <i className="iconfont icon-lihe"/>
+              <p>给好友购买</p>
+              <em>></em>
+            </li>
+            <li className="vip-buy-item">
+              <i className="iconfont icon-duihuanyouhuiquan"/>
+              <p>使用兑换码</p>
+              <em>></em>
+            </li>
+            <li className="vip-buy-item">
+              <i className="iconfont icon-shoutidai"/>
+              <p>我购买的单曲</p>
+              <em>></em>
+            </li>
+          </ul>
+          <ul className="vip-bank">
+            <li className="vip-bank-item">
+              <i className="iconfont icon-zhongxinyinxing"/>
+              <p>中信云音乐免年费白金卡<span>3个月豪华会员+耳机卷</span></p>
+              <em>></em>
+            </li>
+            <li className="vip-bank-item">
+              <i className="iconfont icon-zhaoshangyinhang-"/>
+              <p>办招行联名卡拿AKG耳机<span>开卡送14天云音乐会员</span></p>
+              <em>></em>
+            </li>
+          </ul>
+          <a className="small-footer">
+            付费会员服务协议
+          </a>
+          <a className="small-footer">
+            帮助和反馈
+          </a>
         </div>
       </div>
     )

@@ -4,7 +4,6 @@
 }
 
 .MusicHeader {
-  z-index: 3;
   position: fixed;
   z-index: 999;
   top: 0;
@@ -24,14 +23,23 @@
     width: 8%;
     height: .3rem;
   }
-  .pic2 {
-    background: url("../../images/loading1.png") no-repeat center;
-    background-size: cover;
+  a {
+    display: block;
+    width: 8%;
+    height: .3rem;
+
+    .pic1 {
+      width: 100%;
+      background: url("../../images/topmenu_icn_cloud.png") no-repeat center;
+      background-size: cover;
+    }
+    .pic2 {
+      width: 100%;
+      background: url("../../images/loading1.png") no-repeat center;
+      background-size: cover;
+    }
   }
-  .pic1 {
-    background: url("../../images/topmenu_icn_cloud.png") no-repeat center;
-    background-size: cover;
-  }
+
   span {
     display: block;
     font-size: 16px;

@@ -10,9 +10,6 @@ import {Link} from 'react-router-dom';
 let items = [{src: a}, {src: b}, {src: c}, {src: d}];
 
 export default class HomeHeader extends React.Component {
-  componentDidMount() {
-    console.log(this.props);
-  }
 
   render() {
     return <div className="HomeHeader">

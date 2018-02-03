@@ -41,7 +41,7 @@ export default class HomeList extends React.Component {
         <ul className="list_con">
           {result ? result.map((item, index) => {
             return index < 6 ? (<li key={index}>
-              <Link to={'/playList'}>
+              <Link to={{pathname: '/playList', initid: item.id}}>
                 <img src={item.picUrl} alt=""/>
                 <p id="wode">{item.name}</p>
               </Link>

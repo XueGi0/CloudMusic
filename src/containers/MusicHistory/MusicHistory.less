@@ -1,24 +1,28 @@
-html,body{
+html, body {
   width: 100%;
   font-size: 100px;
   margin: 0;
   padding: 0;
 }
-ul,li{
+
+ul, li {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-a{
+
+a {
   text-decoration: none;
   padding: 0;
   margin: 0;
 }
-.bigBox{
+
+.bigBox {
   width: 100%;
   position: relative;
 }
-.music-header{
+
+.music-header {
   position: fixed;
   z-index: 999;
   top: 0;
@@ -32,7 +36,7 @@ a{
   flex-direction: row;
   justify-content: space-around;
   padding: .12rem .1rem 0;
-  span{
+  span {
     display: block;
     font-size: 16px;
     width: 61%;
@@ -41,7 +45,7 @@ a{
     line-height: .29rem;
     letter-spacing: .02rem;
   }
-  .pic1{
+  .pic1 {
     display: block;
     width: 18%;
     height: .3rem;
@@ -49,7 +53,7 @@ a{
     background-size: cover;
     margin-left: -.2rem;
   }
-  .pic2{
+  .pic2 {
     display: block;
     width: 11%;
     height: .25rem;
@@ -57,30 +61,29 @@ a{
     background-size: cover;
   }
 }
-.list-top{
+
+.list-top {
   width: 100%;
   height: .8rem;
   padding: 0;
   margin: 0;
-  position: absolute;
-  top:.53rem;
-  left: 0;
   border-bottom: 1px solid #cccccc;
-  .imgBox{
+
+  .imgBox {
     margin-top: .05rem;
     margin-left: .1rem;
     float: left;
     width: .7rem;
-    height:.7rem;
+    height: .7rem;
     background: black;
   }
-  img{
+  img {
     display: block;
     width: .5rem;
     height: .5rem;
     margin: .1rem;
   }
-  span{
+  span {
     display: block;
     width: 1.6rem;
     height: 100%;
@@ -89,7 +92,7 @@ a{
     margin-left: .7rem;
     color: black;
   }
-  p{
+  p {
     margin: 0;
     position: absolute;
     top: 0;
@@ -99,60 +102,64 @@ a{
     height: 100%;
     line-height: .8rem;
     font-size: .16rem;
-    .musicdetail{
+    .musicdetail {
       position: absolute;
       top: .31rem;
       right: 0;
       display: block;
-      background: url("../../images/arrow.png")no-repeat;
+      background: url("../../images/arrow.png") no-repeat;
       width: .2rem;
       height: .2rem;
       background-size: cover;
     }
   }
 }
-.list-bottom{
-  position: absolute;
-  top: 1.34rem;
-  left: 0;
-  width: 100%;
-  //span{
-  //  display: block;
-  //  width: 100%;
-  //  height: .2rem;
-  //  line-height: .2rem;
-  //  background-color: lavender;
-  //  font-size:.12rem;
-  //  color: #9c9c9c;
-  //  text-indent: .08rem;
-  //  }
-  }
-  .musicList{
-    width: 100%;
-    padding: 0;
-    margin: 0;
 
-    .listItem{
-      position: relative;
+.late_musicList {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+
+  .listItem {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: .6rem;
+    border-bottom: .01rem solid #cccccc;
+
+    p {
+      height: 100%;
+      width: 3.3rem;
+      line-height: .3rem;
       margin: 0;
-      padding: 0;
-      width: 100%;
-      height: .8rem;
-      border-bottom: 1px solid #cccccc;
-      p{
-        padding: 0;
-        float: left;
-        height: .4rem;
-        font-size: .16rem;
-        line-height: .4rem;
-        margin-left: .1rem;
-        span{
+      font-size: .16rem;
+      float: left;
+      text-indent: .1rem;
+
+      span {
+        display: block;
+        width: 100%;
+        font-size: .12rem;
+        color: gray;
+        padding-left: .3rem;
+        position: relative;
+
+        .sq {
           display: block;
-          width: .8rem;
-          font-size: .12rem;
-          background: #fff;
-          color: gray;
+          position: absolute;
+          top: .07rem;
+          left: .1rem;
+          width: .24rem;
+          height: .18rem;
+          background: url("../../images/index_icon_2x.png") no-repeat center;
+          background-position: 0 0;
         }
       }
     }
+
+    .more{
+
+    }
   }
+}

@@ -49,11 +49,42 @@ html, body, .play_container {
   filter: blur(20px);
 }
 
-.header {
-  height: .6rem;
-  border-bottom: 0.01rem solid rgb(111, 110, 105);
-  position: relative;
-  padding-top: 0.2rem;
+.playerHeader {
+  width: 100%;
+  height: .53rem;
+  overflow: hidden;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 .1rem;
+  border-bottom: .01rem solid rgb(111, 110, 105);
+}
+
+.playerHeader .play_title {
+  display: block;
+  font-size: .16rem;
+  width: 75%;
+  height: .29rem;
+  line-height: .2rem;
+  letter-spacing: .02rem;
+  color: #fff;
+  margin: .1rem 0 0;
+}
+
+.play_title .art {
+  font-size: .16rem;
+}
+
+.play_title .name {
+  font-size: .12rem;
+}
+
+.playerHeader .pic1, .playerHeader .pic2 {
+  margin-top: .12rem;
+  display: block;
+  width: 8%;
+  height: .3rem;
 }
 
 .back {
@@ -501,4 +532,16 @@ html, body, .play_container {
   font-size: .2rem;
   text-align: center;
   margin-top: 0.1rem;
+}
+
+.suspend {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 1.5rem;
+}
+
+.control .suspend .suspendMusic {
+  width: 35%;
+  height: 35%;
 }

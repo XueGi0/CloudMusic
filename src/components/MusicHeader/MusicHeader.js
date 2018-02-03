@@ -1,11 +1,12 @@
 import React from 'react';
-import './MusicHeader.less'
+import './MusicHeader.less';
+import {Link} from 'react-router-dom';
 export default class MusicHeader extends React.Component {
-  render(){
+  render() {
     return <div className="MusicHeader">
-        <i className="pic1"></i>
-        <span>我的音乐</span>
-        <i className="pic2"></i>
+      <Link to={'/login'}><i className="pic1"></i></Link>
+      <span>我的音乐</span>
+      <Link to={'/player'}><i className="pic2"></i></Link>
     </div>
   }
 }

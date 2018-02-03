@@ -13,6 +13,7 @@ export default class Shop extends React.Component {
       <div className="shop">
         <ProfileHeader title={"云音乐商城"} back={this.back} Url={Url}/>
         <div className="content">
+          东西太多，请看别的页面
         </div>
       </div>
     )
