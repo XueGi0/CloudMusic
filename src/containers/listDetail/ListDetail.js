@@ -3,7 +3,6 @@ import './listDetail.less';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import actions from '../../store/actions'
-import MusicHeader from "../../components/MusicHeader/MusicHeader";
 import Url from '../Profile/arrow-2.png';
 import ProfileHeader from '../../components/ProfileHeader/ProfileHeader';
 
@@ -67,18 +66,19 @@ class ListDetail extends React.Component {
             </li>
           </ul>
           <ul className="bottom-bottom">
-            {this.props.listDetail ? this.props.listDetail.result ? this.props.listDetail.result.tracks.map((item, index) => (
-              <li key={index}>
-                <span>{index + 1}</span>
-
-                <p>
-                  <strong>{this.props.listDetail ? this.props.listDetail.result ? item.name : null : null}</strong><br/>
-                  <span><i></i>{this.props.listDetail ? this.props.listDetail.result ? item.artists[0].name : null : null}-{this.props.listDetail ? this.props.listDetail.result ? item.album.name : null : null}</span>
-                  <i className="iconfont"></i>
-                  <em className="iconfont"></em>
-                </p>
-              </li>
-            )) : null : null}
+            {this.props.listDetail ? this.props.listDetail.result ? this.props.listDetail.result.tracks.map((item, index) => {
+              return <Link to={{pathname: '/player', songId: item.id}} key={index}>
+                <li>
+                  <span>{index + 1}</span>
+                  <p>
+                    <strong>{this.props.listDetail ? this.props.listDetail.result ? item.name : null : null}</strong><br/>
+                    <span><i></i>{this.props.listDetail ? this.props.listDetail.result ? item.artists[0].name : null : null}-{this.props.listDetail ? this.props.listDetail.result ? item.album.name : null : null}</span>
+                    <i className="iconfont"></i>
+                    <em className="iconfont"></em>
+                  </p>
+                </li>
+              </Link>
+            }) : null : null}
           </ul>
         </div>
       </div>

@@ -10,11 +10,11 @@ function list(state = initState, action) {
     case Types.GET_PLAYLISTDETAIL:
       return {...state, listDetail: action.payload};
     case Types.GET_HOTDJ:
-        return {...state,hotDj:action.payload};
-      case Types.GET_HOTLIST:
-        return {...state,hotList:action.payload};
-      case Types.GET_RENCENTHISTORY:
-        return {...state,historyList:action.payload};
+      return {...state, hotDj: action.payload};
+    case Types.GET_HOTLIST:
+      return {...state, hotList: action.payload};
+    case Types.GET_RENCENTHISTORY:
+      return {...state, historyList: action.payload};
   }
   return state;
 }

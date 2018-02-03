@@ -1,45 +1,91 @@
-.pwd-panel{
-  padding: 0 .1rem;
+.phone {
+  .content {
+    position: absolute;
+    top: .53rem;
+    bottom: .53rem;
+    left: 0;
+    right: 0;
+    width: 100%;
+    overflow-y: scroll;
+    background-color: #eeeff0;
+
+    .phone-input-box {
+      position: relative;
+      border-bottom: .01rem solid #c3c3c3;
+      height: .51rem;
+      line-height: .51rem;
+      background: #fff;
+
+      i {
+        display: block;
+        margin-top: .1rem;
+        width: .25rem;
+        height: .3rem;
+        float: left;
+        margin-left: .2rem;
+      }
+      .icon-shouji {
+        background: url("./phone.png") no-repeat center;
+        background-size: cover;
+      }
+      .icon-suo {
+        background: url("./passwards.png") no-repeat center;
+        background-size: cover;
+      }
+      input {
+        float: left;
+        padding: 5px;
+        width: 80%;
+        height: .5rem;
+        font-size: 16px;
+        outline: none;
+        border: none;
+        line-height: .7rem;
+      }
+    }
+  }
+}
+
+.pwd-panel {
   display: flex;
   height: .42rem;
 
-  .check-numBox{
+  .check-numBox {
     display: flex;
-    width: 39%;
 
-    .check-num{
+    .check-num {
       padding: .12rem 0;
       font-size: .16rem;
-      border:none;
+      border: none;
       outline: none;
     }
   }
 
-  .get-num{
+  .get-num {
     display: flex;
-    flex:1;
+    flex: 1;
     padding: .1rem .1rem;
     border-left: 1px solid #e0e0e0;
 
-    a{
+    a {
       cursor: pointer;
-      color:#003ab5;
+      color: #003ab5;
       font-size: .14rem;
     }
   }
 }
 
-.phone-dialog{
+.phone-dialog {
   height: .2rem;
   margin-bottom: .05rem;
   line-height: .2rem;
-  color:#f56700;
+  color: #f56700;
   padding-top: .14rem;
   display: none;
   flex-direction: row;
   align-items: center;
 
-  .dialog-logo{
+  .dialog-logo {
     height: .14rem;
     width: .14rem;
     border-radius: 50%;
@@ -50,7 +96,7 @@
     line-height: .14rem;
   }
 
-  .dialog-tit{
+  .dialog-tit {
     height: .28rem;
     width: 80%;
     font-size: .14rem;
@@ -59,14 +105,30 @@
   }
 }
 
-.captcha{
+.captcha {
   width: 1rem;
-  height: .3rem;
-  svg{
+  height: .42rem;
+  border-bottom: .01rem solid #c3c3c3;
+
+  svg {
     display: block;
     transform: scale(0.7);
     position: absolute;
-    top: .95rem;
-    left: 1.2rem;
+    top: 1rem;
+    left: 1.4rem;
   }
+}
+
+.phone .phone-btn {
+  display: block;
+  width: 90%;
+  height: .4rem;
+  line-height: .4rem;
+  border-radius: .15rem;
+  text-align: center;
+  background-color: red;
+  color: #fff;
+  font-size: .14rem;
+  margin-left: 5%;
+  margin-top: .5rem;
 }

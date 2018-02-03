@@ -19,7 +19,7 @@ class List extends React.Component {
   }
 
   move = (e) => {
-      if (e.target !== this.state.point) {
+    if (e.target !== this.state.point) {
       for (let key in this.box.children) {
         if (this.box.children.hasOwnProperty(key)) {
           this.box.children[key].children[1].style.right = '-80px';
@@ -63,8 +63,8 @@ class List extends React.Component {
       e.target.childNodes[1].style.right = 0;
     }
   };
-  spanDelete=(e)=>{
-      e.target.parentNode.style.display='none';
+  spanDelete = (e) => {
+    e.target.parentNode.style.display = 'none';
   };
 
   render() {
@@ -90,7 +90,7 @@ class List extends React.Component {
                 </span>
           <ul className="musicList" ref={x => this.box = x}>
 
-            {localStorage.getItem('id')&&this.props.lists && this.props.lists.playlist.length > 1 ? this.props.lists.playlist.map((item, index) => (
+            {localStorage.getItem('id') && this.props.lists && this.props.lists.playlist.length > 1 ? this.props.lists.playlist.map((item, index) => (
               <li className="listItem" id={index}
                   onTouchStart={this.touchBegin}
                   onTouchMove={this.touching}

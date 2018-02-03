@@ -17,9 +17,14 @@ import musicFoot6 from '../../images/img/play_btn_pause_prs.png'
 import musicFootLoveRed from '../../images/img/play_icn_loved_prs.png'
 import back from '../Profile/arrow-2.png'
 import transpond from '../Profile/transpond.png';
+import actions from '../../store/actions'
+import {connect} from 'react-redux';
 
-export default class MessageBox extends React.Component {
-
+class MessageBox extends React.Component {
+  componentDidMount() {
+    let songId = this.props.location.songId;
+    this.props.getSongDetailAPI(songId);
+  }
 
   changePlayer = () => {
     let $player = this.player,
@@ -27,7 +32,6 @@ export default class MessageBox extends React.Component {
     $player.style.display = 'none';
     $lyric.style.display = 'block';
   };
-
 
   changeLyric = () => {
     let $player = this.player,
@@ -112,10 +116,10 @@ export default class MessageBox extends React.Component {
   // };
 
   render() {
-    console.log(this.audio);
     // console.log(this.header, this.footer, this.main);
     // this.computedMain();
     // window.onresize = this.computedMain;
+    console.log(this.props);
     return (
       <section className="play_container">
         <audio src={music} preload="" className="musicAudio" ref={x => this.audio = x}/>
@@ -242,3 +246,4 @@ export default class MessageBox extends React.Component {
     )
   }
 }
+export default connect(state => ({...state.player}), actions)(MessageBox);

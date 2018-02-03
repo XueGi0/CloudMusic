@@ -1,7 +1,8 @@
 import * as Types from '../action-types';
 import {getPlayList, getListDetail, getHotdj, getHotList, getRencentHistory} from '../../api/list';
 import {getSongList, getExclusive, getNewestMv, getSearch, getPrivateFM} from '../../api/Home';
-import {toLogin,getNumber} from "../../api/Login";
+import {toLogin, getNumber} from "../../api/Login";
+import {getSongDetail} from '../../api/Player';
 
 
 let actions = {
@@ -45,14 +46,14 @@ let actions = {
       dispatch({type: Types.GET_HOTLIST, payload: getHotList()})
     }
   },
-  toLoginAPI(username, password,history){
+  toLoginAPI(username, password, history){
     return function (dispatch, getState) {
       toLogin('18811487139', '246135Zwc').then(function (data) {
         dispatch({type: Types.SET_USER_INFO, user: data});
-        localStorage.setItem("id","539241835");
-        setTimeout(()=>{
-            history.push('/profile');//成功跳转到个人中心页面
-        },1000)
+        localStorage.setItem("id", "539241835");
+        setTimeout(() => {
+          history.push('/profile');//成功跳转到个人中心页面
+        }, 1000)
       })
     }
 
@@ -67,11 +68,16 @@ let actions = {
       dispatch({type: Types.GET_PRIVATE_FM, payload: getPrivateFM()})
     }
   },
-    getNumberAPI(){
-      return function (dispatch,getState) {
-          dispatch({type:Types.GET_NUMBER,payload:getNumber()})
-      }
+  getNumberAPI(){
+    return function (dispatch, getState) {
+      dispatch({type: Types.GET_NUMBER, payload: getNumber()})
     }
+  },
+  getSongDetailAPI(id){
+    return function (dispatch, getState) {
+      dispatch({type: Types.GET_SONG_DETAIL, payload: getSongDetail(id)})
+    }
+  }
 };
 
 
