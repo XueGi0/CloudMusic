@@ -1,6 +1,5 @@
 import React from 'react';
-import './Player.css';
-// import {Link} from 'react-router-dom';
+import './Player.css'
 import picture1 from '../../images/img/play_needle.png'
 import picture2 from '../../images/img/play_disc.png'
 import picture3 from '../../images/img/myDream.jpg'
@@ -43,17 +42,17 @@ export default class MessageBox extends React.Component {
     }
 
   };
-  back = () => {
-    this.props.history.goBack();
-  };
   loveBth = (e) => {
 
     e.stopPropagation();
+    // this.loveA.style.display='block';
     this.loveB.style.display = 'none';
   };
   loveAth = (e) => {
+
     e.stopPropagation();
     this.loveB.style.display = 'block';
+    // this.loveA.style.display='none';
   };
 
   render() {
@@ -62,7 +61,7 @@ export default class MessageBox extends React.Component {
         <audio src={music} preload="" className="musicAudio" ref={x => this.audio = x}></audio>
         <div className="backgroundImg"></div>
         <div className="header">
-          <div className="back" onClick={this.back}>返回</div>
+          <div className="back">返回</div>
           <div className="title">
             <p>我的梦</p>
             <p>张靓颖</p>
@@ -71,14 +70,14 @@ export default class MessageBox extends React.Component {
         </div>
         <div className="musicBody">
           <div className="player" ref={x => this.player = x} onClick={this.changePlayer}>
-            <div><img className="playEffect init" src={picture1} alt="" ref={x => this.bang = x} /></div>
+            <div><img className="playEffect init" src={picture1} alt="" ref={x => this.bang = x}/></div>
             <div><img src={picture2} alt=""/></div>
             <div><img className="playRotate playRotateT" src={picture3} alt="" ref={x => this.rotate = x}/></div>
             <div className="player-fun">
-              <img className="love" src={picture4} onClick={this.loveAth} ref={x => this.loveA = x} alt=""/>
-              <img src={musicBtn2} alt=""/>
-              <img src={musicBtn3} alt=""/>
-              <img src={musicBtn4} alt=""/>
+              <img className="love" src={picture4} onClick={this.loveAth} ref={x => this.loveA = x}/>
+              <img src={musicBtn2}/>
+              <img src={musicBtn3}/>
+              <img src={musicBtn4}/>
               <img className="loveRed" onClick={this.loveBth} src={musicFootLoveRed} ref={x => this.loveB = x}/>
             </div>
             <div className="addMusic"><img src={musicFootLoveRed} alt=""/><p className="addtext">已添加到我喜欢的音乐</p></div>
@@ -178,11 +177,11 @@ export default class MessageBox extends React.Component {
             </div>
           </div>
           <div className="control">
-            <span><img src={musicFoot1} alt=""/></span>
-            <span><img src={musicFoot2} alt=""/></span>
-            <span><img className="playMusic" src={musicFoot3} onClick={this.playMusic} alt=""/></span>
-            <span><img src={musicFoot4} alt=""/></span>
-            <span><img src={musicFoot5} alt=""/></span>
+            <span><img src={musicFoot1}/></span>
+            <span><img src={musicFoot2}/></span>
+            <span><img className="playMusic" src={musicFoot3} onClick={this.playMusic}/></span>
+            <span><img src={musicFoot4}/></span>
+            <span><img src={musicFoot5}/></span>
           </div>
         </div>
         <div className="playMore">

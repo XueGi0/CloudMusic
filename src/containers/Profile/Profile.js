@@ -18,7 +18,9 @@ export default class Personal extends React.Component {
         <div className="m-head">
           <p className="m-title">登陆网易云音乐</p>
           <p className="m-title">手机电脑多端同步，320k高音质无限下载</p>
-          <button className="m-login">立即登陆</button>
+          <Link to={'/login'}>
+            <button className="m-login">立即登陆</button>
+          </Link>
         </div>
         <ul className="list">
           <Link to={"/message"} className="list-item">
