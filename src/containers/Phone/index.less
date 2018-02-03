@@ -1,58 +1,87 @@
-.phone{
-  .content{
+.phone {
+  .phone_content {
+    position: absolute;
+    top: .53rem;
+    bottom: 0;
+    left: 0;
+    right: 0;
     background-color: #fff;
-    padding: 20px 15px;
-    .phone-input-box{
+    z-index: 99;
+    text-align: center;
+
+    .phone-input-box {
       position: relative;
-      margin-bottom: 10px;
-      height: 30px;
-      i{
-        position: absolute;
-        top: 0;
-        left: 0;
-        margin-right: 5px;
+      border-bottom: .01rem solid #c3c3c3;
+      height: .51rem;
+      line-height: .51rem;
+
+      i {
+        display: block;
+        margin-top: .1rem;
+        width: .25rem;
+        height: .3rem;
+        float: left;
+        margin-left:.2rem;
       }
-      input{
-        position: absolute;
-        top: -5px;
-        left: 20px;
+      .icon-shouji {
+        background: url("./phone.png") no-repeat center;
+        background-size: cover;
+      }
+      .icon-suo {
+        background: url("./passwards.png") no-repeat center;
+        background-size: cover;
+      }
+      input {
+        float: left;
         padding: 5px;
-        width: 75%;
-        height: 50%;
+        width: 80%;
+        height: .5rem;
         font-size: 16px;
+        outline: none;
+        border: none;
+        line-height: .7rem;
       }
     }
-    .phone-btn{
+    .phone-btn {
       display: block;
       width: 90%;
-      height: 30px;
-      line-height:30px;
-      border-radius: 15px;
+      height: .4rem;
+      line-height: .4rem;
+      border-radius: .15rem;
       text-align: center;
       background-color: red;
-      color: #ffffff;
-      font-size: 12px;
+      color: #fff;
+      font-size: .14rem;
+      margin-left: 5%;
+      margin-top: .5rem;
     }
-    .phone-reset{
-      font-size: 10px;
-      position: relative;
-      left: -15px;
-      top: 10px;
-      text-decoration: underline;
+    .phone-reset {
+      position: absolute;
+      top: 2rem;
+      left: 50%;
+      margin-left: -.3rem;
+      display: inline-block;
+      height: .3rem;
+      width: .6rem;
+      line-height: .35rem;
+      border-bottom: .01rem solid #aaa;
+      font-size: .14rem;
+      color: #c3c3c3;
     }
   }
 }
-.login-dialog{
+
+.login-dialog {
   height: .2rem;
   margin-bottom: .05rem;
   line-height: .2rem;
-  color:#f56700;
+  color: #f56700;
   padding-top: .14rem;
   display: none;
   flex-direction: row;
   align-items: center;
 
-  .login-logo{
+  .login-logo {
     height: .14rem;
     width: .14rem;
     border-radius: 50%;
@@ -63,7 +92,7 @@
     line-height: .14rem;
   }
 
-  .login-tit{
+  .login-tit {
     height: .28rem;
     width: 80%;
     font-size: .14rem;

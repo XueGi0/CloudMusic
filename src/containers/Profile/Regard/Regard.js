@@ -2,6 +2,7 @@ import React from 'react';
 import './index.less'
 import Url from '../arrow-2.png';
 import ProfileHeader from '../../../components/ProfileHeader/ProfileHeader';
+import arrow from '../arrow-1.png'
 export default class Regard extends React.Component {
   back = () => {
     this.props.history.goBack();
@@ -28,15 +29,15 @@ export default class Regard extends React.Component {
           <ul className="regard-box">
             <li className="regard-box-item">
               <p>新手教程</p>
-              <em>></em>
+              <img src={arrow} alt=""/>
             </li>
             <li className="regard-box-item">
               <p>帮助与反馈</p>
-              <em>></em>
+              <img src={arrow} alt=""/>
             </li>
             <li className="regard-box-item">
               <p>给软件评分</p>
-              <em>></em>
+              <img src={arrow} alt=""/>
             </li>
           </ul>
           <a className="small-footer">使用网易云音乐网页版、电脑客户端、手机客户端，强大的多段同步，音乐随身听！请访问：music.163.com</a>

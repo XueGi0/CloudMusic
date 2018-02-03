@@ -1,37 +1,103 @@
+
 .login {
   background: url("./login.jpg") no-repeat;
   background-size: cover;
-  height: 100vh;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 99;
+
   .login-title {
-    padding-top: 15px;
+    padding-top: .15rem;
     text-align: center;
     position: relative;
-    font-size: 16px;
+    font-size: .2rem;
+    line-height: .4rem;
+
     i {
       position: absolute;
-      top: 0;
-      left: 20px;
-      font-style: normal;
-      font-size: 40px;
-      color: red;
+      top: .2rem;
+      left: .2rem;
+      width: .3rem;
+      height: .3rem;
+      background: url("./close.png") no-repeat;
+      background-size: cover;
+
     }
   }
+
+  .tubiao {
+    width: .8rem;
+    height: .8rem;
+    border-radius: 20%;
+
+  }
+
   .login-btn-box {
     width: 100%;
     position: absolute;
     top: 40%;
+
     .login-btn {
       display: block;
       width: 80%;
-      height: 30px;
-      line-height: 30px;
+      height: .4rem;
+      line-height: .4rem;
       margin-left: 10%;
-      margin-bottom: 15px;
-      border: 1px solid red;
-      border-radius: 15px;
+      margin-bottom: .15rem;
+      border: .01rem solid red;
+      border-radius: .15rem;
       text-align: center;
       color: red;
-      font-size: 14px;
+      font-size: .14rem;
     }
+  }
+
+  .login-footer {
+    width: 100%;
+    line-height: .5rem;
+    position: absolute;
+    bottom: .2rem;
+    left: 0;
+
+    span {
+      font-size: .14rem;
+    }
+    .icon-box {
+      display: flex;
+      justify-content: space-around;
+      flex-direction: row;
+
+      li {
+        font-size: .14rem;
+
+        i {
+          display: block;
+          width: .6rem;
+          height: .6rem;
+        }
+        .icon-weixin {
+          background: url("./wechat.png") no-repeat;
+          background-size: cover;
+        }
+        .icon-qq {
+          background: url("./qq.png") no-repeat;
+          background-size: cover;
+        }
+        .icon-weibo {
+          background: url("./weibo.png") no-repeat;
+          background-size: cover;
+        }
+        .icon-email {
+          background: url("./wechat.png") no-repeat;
+          background-size: cover;
+        }
+      }
+
+    }
+
   }
 }

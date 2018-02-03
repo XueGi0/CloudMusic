@@ -2,7 +2,7 @@ import React from 'react';
 import './index.less'
 import Url from '../arrow-2.png';
 import ProfileHeader from '../../../components/ProfileHeader/ProfileHeader';
-
+import arrow from '../arrow-1.png';
 export default class Setting extends React.Component {
   back = () => {
     this.props.history.goBack();
@@ -16,17 +16,17 @@ export default class Setting extends React.Component {
           <ul className="setting-box">
             <li className="setting-item">
               <p>在线播放音质</p>
-              <em>></em>
+              <img src={arrow} alt=""/>
               <span>自动</span>
             </li>
             <li className="setting-item">
               <p>下载音质</p>
-              <em>></em>
+              <img src={arrow} alt=""/>
               <span>较高</span>
             </li>
             <li className="setting-item">
               <p>边听边存</p>
-              <em>></em>
+              <img src={arrow} alt=""/>
               <span>未开启</span>
             </li>
           </ul>
@@ -47,7 +47,7 @@ export default class Setting extends React.Component {
           <ul className="setting-box">
             <li className="setting-item">
               <p>均衡器</p>
-              <em>></em>
+              <img src={arrow} alt=""/>
               <span>已关闭</span>
             </li>
             <li className="setting-item">
@@ -69,7 +69,7 @@ export default class Setting extends React.Component {
           <ul className="setting-box">
             <li className="setting-item">
               <p>车载蓝牙播放器</p>
-              <em>></em>
+              <img src={arrow} alt=""/>
             </li>
           </ul>
           <ul className="setting-box">
@@ -81,7 +81,7 @@ export default class Setting extends React.Component {
           <ul className="setting-box">
             <li className="setting-item">
               <p>清除缓存</p>
-              <em>></em>
+              <img src={arrow} alt=""/>
             </li>
           </ul>
         </div>

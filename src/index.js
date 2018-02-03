@@ -15,10 +15,13 @@ import Sweep from './containers/Profile/Sweep/Sweep';
 import Skin from './containers/Profile/Skin/Skin';
 import Timer from './containers/Profile/Timer/Timer';
 import Clock from './containers/Profile/Clock/Clock';
+import Drive from './containers/Profile/Drive/Drive';
+import Share from './containers/Profile/Share/Share';
 import Regard from './containers/Profile/Regard/Regard';
 import Search from './containers/Home/Search/Search';
 import Video from './containers/Home/Video/Video';
 import PrivateFM from './containers/Home/PrivateFM/PrivateFM';
+import Station from './containers/Home/Station/Station';
 
 import App from './containers/App';
 import {Provider} from 'react-redux';
@@ -42,11 +45,14 @@ ReactDOM.render(
           <Route path="/personal_fm" component={PrivateFM}/>
           <Route path="/search" component={Search}/>
           <Route path="/video" component={Video}/>
+          <Route path="/station" component={Station}/>
+          <Route path="/share" component={Share}/>
           <Route path="/music" component={Music}/>
           <Route path="/profile" component={Profile}/>
           <Route path="/playList" component={ListDetail}/>
           <Route path="/message" component={Message}/>
           <Route path="/vip" component={VIP}/>
+          <Route path="/drive" component={Drive}/>
           <Route path="/shop" component={Shop}/>
           <Route path="/online" component={OnLine}/>
           <Route path="/setting" component={Setting}/>

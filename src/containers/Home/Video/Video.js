@@ -7,6 +7,11 @@ import Nav from "../Nav/Nav";
 import a from './like.png';
 import b from './message.png';
 import c from './more.png';
+import video_1 from './1.mp4'
+import video_2 from './2.mp4'
+import video_3 from './3.mp4'
+import video_4 from './4.mp4'
+import video_5 from './5.mp4'
 
 
 export default class Video extends React.Component {
@@ -18,7 +23,7 @@ export default class Video extends React.Component {
         <ul className="myVideo">
           <li className="video1">
             <video className="media1"
-                   src="http://vodkgeyttp8.vod.126.net/cloudmusic/c7cab2c5cd300be3d18b269b20e851d5.mp4?wsSecret=77461bc5c5f970c6216fbea9922f0386&wsTime=1517566515"
+                   src={video_1}
                    controls="controls">videoMessage
             </video>
             <div className="videoText">
@@ -32,7 +37,7 @@ export default class Video extends React.Component {
           </li>
           <li className="video1">
             <video className="media1"
-                   src="http://vodkgeyttp8c.vod.126.net/cloudmusic/888390d41aa0444a1a714320c090c109.mp4?wsSecret=5c9b0d72fb64c36b4d36312c27d278ae&wsTime=1517569020"
+                   src={video_2}
                    controls="controls">videoMessage
             </video>
             <div className="videoText">
@@ -46,7 +51,7 @@ export default class Video extends React.Component {
           </li>
           <li className="video1">
             <video className="media1"
-                   src="http://vodkgeyttp8.vod.126.net/cloudmusic/e1bdaf8cf8c73a376de85a7502761d8b.mp4?wsSecret=3b387e0ddae560ab02e0e82d2490672a&wsTime=1517569233"
+                   src={video_3}
                    controls="controls">videoMessage
             </video>
             <div className="videoText">
@@ -60,7 +65,7 @@ export default class Video extends React.Component {
           </li>
           <li className="video1">
             <video className="media1"
-                   src="http://vodkgeyttp8.vod.126.net/cloudmusic/536f69ab521ba46b2159a575745353f7.mp4?wsSecret=a54cf2164d2cea7b388b129f92c9bd20&wsTime=1517569979"
+                   src={video_4}
                    controls="controls">videoMessage
             </video>
             <div className="videoText">
@@ -74,7 +79,7 @@ export default class Video extends React.Component {
           </li>
           <li className="video1">
             <video className="media1"
-                   src="http://vodkgeyttp8.vod.126.net/vodkgeyttp8/2YSxIie0_73115474_hd.mp4?wsSecret=23384e93967403bec3884e225a092d90&wsTime=1517569729"
+                   src={video_5}
                    controls="controls">videoMessage
             </video>
             <div className="videoText">

@@ -2,6 +2,7 @@ import React from 'react';
 import './index.less'
 import Url from '../arrow-2.png';
 import ProfileHeader from '../../../components/ProfileHeader/ProfileHeader';
+import arrow from '../arrow-1.png'
 
 export default class OnLine extends React.Component {
   back = () => {
@@ -31,7 +32,7 @@ export default class OnLine extends React.Component {
               畅听流量包
               <b>￥9/月 新用户送三天</b>
             </p>
-            <em>></em>
+            <img src={arrow} alt=""/>
           </div>
           <div className="online-phone">
             <i className="iconfont icon-changyonglogo38"/>
@@ -39,7 +40,7 @@ export default class OnLine extends React.Component {
               新用户畅听包
               <b>￥10/月 免费体验一个月</b>
             </p>
-            <em>></em>
+            <img src={arrow} alt=""/>
           </div>
           <a className="small-footer">我已开通流量包，立即激活></a>
         </div>
