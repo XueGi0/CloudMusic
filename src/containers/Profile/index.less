@@ -175,6 +175,109 @@ input {
     }
   }
 }
+.m-head {
+  height: 1.3rem;
+  background-color: #fff;
+  text-align: center;
+  padding-top: .2rem;
+  box-sizing: content-box;
+  .notLogin{
+    display: block;
+    .m-title {
+      font-size: .14rem;
+      height: .3rem;
+      line-height: .3rem;
+      letter-spacing: .02rem;
+      margin-bottom: 0;
+    }
+    .m-login {
+      margin-top: .1rem;
+      width: 90%;
+      height: .4rem;
+      line-height: .4rem;
+      background-color: #fff;
+      margin-left: 5%;
+      border: .01rem solid #ccc;
+      border-radius: .05rem;
+      letter-spacing: .02rem;
+      font-size: .14rem;
+      float: left;
+    }
+  }
+  .loggedOn{
+    display: block;
+    .mineTop{
+      position: relative;
+      height: 0.7rem;
+      .portrait{
+        width: .55rem;
+        height: .55rem;
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        left: .2rem;
+      }
+      .myName{
+        position: absolute;
+        top: 0;
+        left: .9rem;
+        p:nth-child(1){
+          font-size: .18rem;
+          margin-bottom: 0;
+          color: black;
+        }
 
+        a{
+          position: absolute;
+          top: .3rem;
+          left: 0;
+          height: 0.2rem;
+          width: 0.35rem;
+          font-size: .02rem;
+          border: .02rem solid #cccccc;
+          border-radius: .09rem;
+          color: black;
+        }
+
+      }
+      .sign{
+        position: absolute;
+        top: -.95rem;
+        right: 0;
+        margin: .1rem;
+        a{
+          font-size: .15rem;
+          border-radius: .15rem;
+          border: 1px solid #cccccc;
+          padding: 0.02rem 0.1rem;
+        }
+      }
+
+    }
+    .mineOthers{
+      border-top: .01rem solid #cccccc;
+      height: 0.59rem;
+      ul{
+        margin-top: 0.1rem;
+        li:nth-child(4){
+          border-right:none;
+        }
+        li{
+          float:left;
+          height: 0.4rem;
+          width: 0.93rem;
+          border-right: 0.01rem solid #cccccc;
+          p{
+            font-size: 0.14rem;
+            margin-bottom: 0;
+          }
+          p:nth-child(2){
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}
 
 

@@ -96,7 +96,7 @@ class List extends React.Component {
                   onTouchMove={this.touching}
                   key={index}
               >
-                <Link to={{pathname: '/playList', initid: item.id}} exact={true}>
+                <Link to={{pathname: '/playList', initid: item.id}} exact="true">
                   <img src={item.coverImgUrl} alt=""/>
                   <p className="textLike">{item.name}<span>{item.playCount}首</span></p>
                 </Link>
@@ -104,7 +104,7 @@ class List extends React.Component {
               </li>
             )) :
               <li className="listItem">
-                <Link to={'/playList'} exact={true}>
+                <Link to={'/playList'} exact="true">
                   <p className="img"></p>
                   <p className="textLike">我喜欢的音乐<span>0首</span></p>
                 </Link>

@@ -17,7 +17,6 @@ class ListDetail extends React.Component {
   };
 
   render() {
-    console.log(this.props);
     return <div className="list_detail">
       <ProfileHeader title={"歌单"} back={this.back} Url={Url}/>
       <div className="content">

@@ -20,8 +20,15 @@ import back from '../Profile/arrow-2.png'
 import transpond from '../Profile/transpond.png';
 import actions from '../../store/actions'
 import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 
 class MessageBox extends React.Component {
+  constructor(){
+    super();
+    this.state={
+      flag:true
+    }
+  }
   componentDidMount() {
     let songId = this.props.location.songId;
     // this.props.getLyricAPI(songId);
@@ -49,11 +56,16 @@ class MessageBox extends React.Component {
       this.audio.play();
       this.bang.className = 'playEffect play';
       this.rotate.className = 'playRotate';
-
+      this.setState({
+          flag:false
+      });
     } else {
       this.audio.pause();
       this.bang.className = 'playEffect init';
       this.rotate.className = 'playRotateT';
+        this.setState({
+            flag:true
+        });
     }
     this.autoTimer = setInterval(this.computedAlready, 1000);
   };
@@ -131,7 +143,7 @@ class MessageBox extends React.Component {
         <div className="backgroundImg"><img src={result ? result.tracks ? result.creator.backgroundUrl : null : null}
                                             alt=""/></div>
         <div className="playerHeader" ref={x => this.header = x}>
-          <img src={back} alt="" className="pic1" onClick={this.back}/>
+          <Link to={'/'}><img src={back} alt="" className="pic1"/></Link>
           <p className="play_title">
             <span
               className="art">{result ? result.tracks ? result.tracks[0].name : null : null}</span><br/>
@@ -234,7 +246,7 @@ class MessageBox extends React.Component {
           <div className="control">
             <span><img src={musicFoot1}/></span>
             <span><img src={musicFoot2}/></span>
-            <span><img className="playMusic" src={musicFoot3} onClick={this.playMusic}/></span>
+            <span>{this.state.flag?<img className="playMusic" src={musicFoot3} onClick={this.playMusic}/>:<img className="playMusic" src={musicFoot7} onClick={this.playMusic}/>}</span>
             <span><img src={musicFoot4}/></span>
             <span><img src={musicFoot5}/></span>
             <span className="suspend"><img className="suspendMusic" src={musicFoot6} alt=""/></span>

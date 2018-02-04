@@ -34,6 +34,7 @@ import Login from "./containers/Login/Login";
 import Register from "./containers/Register/Register";
 import Phone from "./containers/Phone/Phone";
 import Reset from "./containers/Reset/Reset";
+import MyData from "./containers/Profile/MyData/Mydata";
 
 ReactDOM.render(
   <Provider store={store}>
@@ -69,6 +70,7 @@ ReactDOM.render(
           <Route path="/register" component={Register}/>
           <Route path="/phone" component={Phone}/>
           <Route path="/reset" component={Reset}/>
+          <Route path="/mydata" component={MyData}/>
         </Switch>
       </App>
     </Router>
