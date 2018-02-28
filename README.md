@@ -8,21 +8,21 @@ yarn start
 
 
 ### 目录结构
-├── node_modules              // 项目依赖
-├── dist               		 // 项目build目录
-├── index.html          	     // 项目入口文件
-├── package.json      		 // 项目配置文件
-├── src                		 // 生产目录
-│   ├── api       			 // api请求
-│   ├── images               // 图片资源
-│   ├── components         	 // 公共的组件
-│   ├── containers     		 // 各种组件
-│   ├── store                //redux
-│   └── index.js       	     // 项目入口文件
+├── node_modules              // 项目依赖\<br>
+├── dist               		 // 项目build目录\<br>
+├── index.html          	     // 项目入口文件\<br>
+├── package.json      		 // 项目配置文件\<br>
+├── src                		 // 生产目录\<br>
+│   ├── api       			 // api请求\<br>
+│   ├── images               // 图片资源\<br>
+│   ├── components         	 // 公共的组件\<br>
+│   ├── containers     		 // 各种组件\<br>
+│   ├── store                //redux\<br>
+│   └── index.js       	     // 项目入口文件\<br>
 
 ### 技术栈
-前端：react+react-router-dom+axios+es6+webpack;
-后端：感谢网络提供的网易官方后台；
+前端：react+react-router-dom+axios+es6+webpack\<br>
+后端：感谢网络提供的网易官方后台
 
 ### 实现的功能
 - 音乐播放：包括播放动画、歌曲切换
