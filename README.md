@@ -6,7 +6,6 @@ $ PORT=4000 node app.js
 ### 项目启动
 yarn start
 
-
 ### 目录结构
 ├── node_modules              // 项目依赖<br>
 ├── dist               		 // 项目build目录<br>
@@ -30,3 +29,7 @@ yarn start
 - 首页效果及跳转
 - 歌单及歌单详情
 - 获取最近播放记录
+
+### 关于样式加载不出来的问题
+用react的create-react-app 安装项目之后，发现不能编译less文件，所以经过大家的探讨和上网所搜，改变了两个webpack文件的配置，在node_modules文件下的React-scripts中找到webpack.config.dev.js和webpack.config.prod.js文件进行替换即可。<br>
+注：在替换之前必须保证所有的模块都已经安装，然后再替换文件。如果替换文件之后再安装模块，会导致新替换的文件失效
